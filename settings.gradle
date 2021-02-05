@@ -1,0 +1,3 @@
+include ':concision'
+include ':app'
+rootProject.name = "ConcisionDemo"

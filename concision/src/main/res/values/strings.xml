@@ -1,0 +1,16 @@
+<resources>
+    <!--  说明 所有应用中出现的文字 请放入strings.xml文件 方便国际化 拒绝硬编码 -->
+    <!--  网络请求  -->
+    <string name="def_loading_message">加载中…</string>
+
+    <!--  框架名  -->
+    <string name="lib_name">concision</string>
+
+    <string name="error_request">请求失败，请稍后再试</string>
+    <string name="error_parse">解析错误，请稍后再试</string>
+    <string name="error_connect">网络连接错误，请稍后重试</string>
+    <string name="error_certificate">证书出错，请稍后再试</string>
+    <string name="error_timeout">网络连接超时，请稍后重试</string>
+
+
+</resources>

@@ -1,0 +1,125 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    //基础框架
+    //kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.2'
+    //lifecycle
+    api 'androidx.lifecycle:lifecycle-runtime-ktx:2.2.0'
+    api 'androidx.lifecycle:lifecycle-common-java8:2.2.0'
+    api 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    // viewModel
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+    api "androidx.fragment:fragment-ktx:1.2.5"
+    // liveData
+    api "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+    api 'com.kunminx.archi:unpeek-livedata:4.4.1-beta1'
+    //navigation
+    api 'androidx.navigation:navigation-runtime-ktx:2.3.1'
+
+    //网络相关
+    //动态替换BaseUrl库(无需混淆) https://github.com/JessYanCoding/RetrofitUrlManager
+    api 'me.jessyan:retrofit-url-manager:1.4.0'
+    //retrofit
+    api "com.squareup.retrofit2:retrofit:2.9.0"
+    api "com.squareup.retrofit2:converter-gson:2.9.0"
+    api 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
+    //日志拦截器
+    api 'com.squareup.okhttp3:logging-interceptor:4.3.0'
+
+    //多媒体相关
+    //图片加载  https://www.fresco-cn.org/docs/getting-started.html
+    api 'com.facebook.fresco:fresco:0.12.0'
+    //图片压缩 https://github.com/Curzibn/Luban
+    api 'top.zibin:Luban:1.1.8'
+    //图片选择 https://github.com/LuckSiege/PictureSelector/blob/master/README_CN.md
+    api 'com.github.LuckSiege.PictureSelector:picture_library:v2.6.0'
+
+    //工具相关
+    //工具库(基本涵盖日常所需功能 无需混淆)
+    //功能目录 https://github.com/Blankj/AndroidUtilCode/blob/master/lib/utilcode/README-CN.md
+    //不常用功能目录 https://github.com/Blankj/AndroidUtilCode/blob/master/lib/subutil/README-CN.md
+    api 'com.blankj:utilcodex:1.30.5'
+    //权限(无需混淆) https://github.com/guolindev/PermissionX
+    api 'com.permissionx.guolindev:permissionx:1.4.0'
+    //app更新(无需混淆) https://github.com/WVector/AppUpdate/blob/master/kotlin.md
+    api 'com.qianwen:update-app-kotlin:1.2.3'
+
+    //UI相关
+    //ui适配(无需混淆) https://github.com/JessYanCoding/AndroidAutoSize/blob/master/README-zh.md
+    api 'me.jessyan:autosize:1.2.1'
+    //列表适配器(无需混淆) https://github.com/CymChad/BaseRecyclerViewAdapterHelper/blob/master/readme/0-BaseRecyclerViewAdapterHelper.md
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+    //刷新 https://github.com/scwang90/SmartRefreshLayout
+//    api  'com.scwang.smart:refresh-layout-kernel:2.0.3'      //核心必须依赖 (必选)
+//    api  'com.scwang.smart:refresh-header-classics:2.0.3'    //经典刷新头 (可选)
+//    api  'com.scwang.smart:refresh-header-radar:2.0.3'       //雷达刷新头 (可选)
+//    api  'com.scwang.smart:refresh-header-falsify:2.0.3'     //虚拟刷新头 (可选)
+//    api  'com.scwang.smart:refresh-header-material:2.0.3'    //谷歌刷新头 (可选)
+//    api  'com.scwang.smart:refresh-header-two-level:2.0.3'   //二级刷新头 (可选)
+//    api  'com.scwang.smart:refresh-footer-ball:2.0.3'        //球脉冲加载 (可选)
+//    api  'com.scwang.smart:refresh-footer-classics:2.0.3'    //经典加载 (可选)
+    //状态
+    api 'com.kingja.loadsir:loadsir:1.3.8'
+    //导航
+
+    //material-dialogs
+    //dialog-core https://github.com/afollestad/material-dialogs/blob/main/documentation/CORE.md
+    api 'com.afollestad.material-dialogs:core:3.3.0'
+    //dialog-input https://github.com/afollestad/material-dialogs/blob/main/documentation/INPUT.md
+    api 'com.afollestad.material-dialogs:input:3.3.0'
+    //dialog生命周期 https://github.com/afollestad/material-dialogs/blob/main/documentation/LIFECYCLE.md
+    api 'com.afollestad.material-dialogs:lifecycle:3.3.0'
+    //dialog底部表单 https://github.com/afollestad/material-dialogs/blob/main/documentation/BOTTOMSHEETS.md
+    api 'com.afollestad.material-dialogs:bottomsheets:3.3.0'
+    //简易通用popwindow https://github.com/pinguo-zhouwei/CustomPopwindow
+    api 'com.github.pinguo-zhouwei:CustomPopwindow:2.1.1'
+
+    //h5相关 https://github.com/Justson/AgentWeb
+    api 'com.just.agentweb:agentweb-androidx:4.1.4' // (必选)
+    api 'com.just.agentweb:filechooser-androidx:4.1.4'// (可选)
+    api 'com.download.library:downloader-androidx:4.1.4'// (可选)
+
+
+
+}
