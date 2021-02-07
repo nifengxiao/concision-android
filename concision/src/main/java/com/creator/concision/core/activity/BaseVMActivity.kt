@@ -15,7 +15,7 @@ import com.creator.concision.network.manager.NetworkStateManager
  * @Author: Creator
  * @Description: ViewModelActivity基类
  */
-abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() {
+abstract class BaseVMActivity<VM : BaseViewModel> : AppCompatActivity() {
 
     lateinit var mViewModel: VM
 

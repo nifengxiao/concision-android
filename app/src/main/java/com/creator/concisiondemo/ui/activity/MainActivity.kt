@@ -1,7 +1,8 @@
-package com.creator.concisiondemo
+package com.creator.concisiondemo.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.creator.concisiondemo.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

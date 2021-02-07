@@ -21,7 +21,7 @@ import com.creator.concision.network.manager.NetworkStateManager
  * @Author: Creator
  * @Description: ViewModelFragment基类
  */
-abstract class BaseFragment<VM : BaseViewModel> : Fragment() {
+abstract class BaseVMFragment<VM : BaseViewModel> : Fragment() {
 
     //是否第一次加载
     private var isFirst: Boolean = true
