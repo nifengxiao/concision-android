@@ -2,28 +2,32 @@ package com.creator.concision.core.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProvider
 import com.creator.concision.R
 import com.creator.concision.core.app.appContext
 import com.creator.concision.core.viewmodel.BaseViewModel
+import com.creator.concision.ext.dismissLoadingExt
 import com.creator.concision.ext.getVmClass
+import com.creator.concision.ext.showLoadingExt
 import com.creator.concision.network.manager.NetState
 import com.creator.concision.network.manager.NetworkStateManager
 
 /**
  * @CreateDate: 2021/1/11
  * @Author: Creator
- * @Description: ViewModelActivity基类
+ * @Description: 公共BaseActivity基类
  */
-abstract class BaseVMActivity<VM : BaseViewModel> : AppCompatActivity() {
+abstract class CommonBaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : AppCompatActivity() {
 
     lateinit var mViewModel: VM
 
+    lateinit var mDatabind: DB
+
+    abstract fun layoutId(): Int
+
     abstract fun initView(savedInstanceState: Bundle?)
-
-    abstract fun showLoading(message: String = appContext.getString(R.string.def_loading_message))
-
-    abstract fun dismissLoading()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,7 +47,7 @@ abstract class BaseVMActivity<VM : BaseViewModel> : AppCompatActivity() {
     }
 
     /**
-     * 网络变化监听 子类重写
+     * 网络变化监听
      */
     open fun onNetworkStateChanged(netState: NetState) {}
 
@@ -90,11 +94,29 @@ abstract class BaseVMActivity<VM : BaseViewModel> : AppCompatActivity() {
         }
     }
 
-
     /**
      * 初始化DataBinding
      */
-    open fun initDataBind() {}
+    fun initDataBind() {
+        mDatabind = DataBindingUtil.setContentView(this, layoutId())
+        mDatabind.lifecycleOwner = this
+    }
+
+
+    /**
+     * 打开加载框
+     */
+    fun showLoading(message: String = appContext.getString(R.string.def_loading_message)){
+        showLoadingExt(message)
+    }
+
+    /**
+     * 关闭加载框
+     */
+    fun dismissLoading(){
+        dismissLoadingExt()
+    }
+
 
 
 

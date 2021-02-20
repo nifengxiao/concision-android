@@ -7,6 +7,10 @@ import com.kunminx.architecture.ui.callback.UnPeekLiveData
  * @CreateDate: 2021/1/11
  * @Author: Creator
  * @Description: ViewModel的基类
+ * 作用
+ * 用于管理页面状态
+ * 用法
+ * 基于View 每个Activity/Fragment都需要继承这个
  */
 open class BaseViewModel : ViewModel() {
 

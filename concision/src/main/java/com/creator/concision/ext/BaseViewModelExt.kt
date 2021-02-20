@@ -3,8 +3,8 @@ package com.creator.concision.ext
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.creator.concision.R
-import com.creator.concision.core.activity.BaseVMActivity
-import com.creator.concision.core.fragment.BaseVMFragment
+import com.creator.concision.core.activity.CommonBaseActivity
+import com.creator.concision.core.fragment.CommonBaseFragment
 import kotlinx.coroutines.*
 import com.creator.concision.core.viewmodel.BaseViewModel
 import com.creator.concision.ext.util.getResString
@@ -30,7 +30,7 @@ import com.creator.concision.network.paresResult
  * @param onError 失败回调
  *
  */
-fun <T> BaseVMActivity<*>.parseState(
+fun <T> CommonBaseActivity<*,*>.parseState(
     resultState: ResultState<T>,
     onSuccess: (T) -> Unit,
     onError: ((AppException) -> Unit)? = null,
@@ -60,7 +60,7 @@ fun <T> BaseVMActivity<*>.parseState(
  * @param onError 失败回调
  *
  */
-fun <T> BaseVMFragment<*>.parseState(
+fun <T> CommonBaseFragment<*,*>.parseState(
     resultState: ResultState<T>,
     onSuccess: (T) -> Unit,
     onError: ((AppException) -> Unit)? = null,
