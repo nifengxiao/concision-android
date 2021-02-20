@@ -27,13 +27,13 @@ android {
         debug {
             keyAlias 'sclykjyxgs'
             keyPassword 'sclykjyxgs'
-//            storeFile file('../打包相关/sclykjyxgs.jks')
+            storeFile file('../打包相关/sclykjyxgs.jks')
             storePassword 'sclykjyxgs'
         }
         release {
             keyAlias "sclykjyxgs"
             storePassword "sclykjyxgs"
-//            storeFile file("../打包相关/sclykjyxgs.jks")//签名⽂件的path
+            storeFile file("../打包相关/sclykjyxgs.jks")//签名⽂件的path
             keyPassword "sclykjyxgs"
         }
     }
@@ -97,21 +97,24 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    buildFeatures {
+        dataBinding = true
+    }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
 
-    buildFeatures {
-        dataBinding = true
-    }
+
 }
 
 dependencies {
+    //核心框架
+    implementation project(path: ':concision')
     //kotlin
     implementation "androidx.core:core-ktx:+"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    //核心框架
-    implementation project(path: ':concision')
+
 
 }
 repositories {

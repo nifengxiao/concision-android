@@ -44,6 +44,7 @@ dependencies {
     //androidx
     api rootProject.ext.dependencies["appcompat"]
     api rootProject.ext.dependencies["fragment-ktx"]
+    api rootProject.ext.dependencies["constraintlayout"]
     //材料设计
     api rootProject.ext.dependencies["material"]
     //测试相关
@@ -122,7 +123,6 @@ dependencies {
     api rootProject.ext.dependencies["material-dialogs:bottomsheets"]
     //简易通用popwindow https://github.com/pinguo-zhouwei/CustomPopwindow
     api rootProject.ext.dependencies["CustomPopwindow"]
-
     //h5相关 https://github.com/Justson/AgentWeb
     api rootProject.ext.dependencies["agentweb"]
     api rootProject.ext.dependencies["filechooser"]

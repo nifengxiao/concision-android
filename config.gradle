@@ -10,7 +10,8 @@ ext {
     ]
 
     version = [
-
+            "materialDialogsVersion": "3.3.0",
+            "agentwebVersion"       : "4.1.4"
     ]
 
     dependencies = [
@@ -18,6 +19,8 @@ ext {
             //androidx
             "appcompat"                    : "androidx.appcompat:appcompat:1.2.0",
             "fragment-ktx"                 : "androidx.fragment:fragment-ktx:1.2.5",
+            "constraintlayout"             : 'androidx.constraintlayout:constraintlayout:1.1.3',
+
             //材料设计
             "material"                     : "com.google.android.material:material:1.2.1",
             //测试相关
@@ -50,7 +53,6 @@ ext {
             "PersistentCookieJar"          : "com.github.franmontiel:PersistentCookieJar:v1.0.1",
             //日志拦截器
             "logging-interceptor"          : "com.squareup.okhttp3:logging-interceptor:4.7.2",
-
             //多媒体相关
             //图片加载  https://www.fresco-cn.org/docs/getting-started.html
             "fresco"                       : "com.facebook.fresco:fresco:0.12.0",
@@ -65,7 +67,6 @@ ext {
             "utilcodex"                    : "com.blankj:utilcodex:1.30.5",
             //权限(无需混淆) https://github.com/guolindev/PermissionX
             "permissionx"                  : "com.permissionx.guolindev:permissionx:1.4.0",
-
             //app更新(无需混淆) https://github.com/WVector/AppUpdate/blob/master/kotlin.md
             "update-app-kotlin"            : "com.qianwen:update-app-kotlin:1.2.3",
             //UI相关
@@ -74,39 +75,38 @@ ext {
             //列表适配器(无需混淆) https://github.com/CymChad/BaseRecyclerViewAdapterHelper/blob/master/readme/0-BaseRecyclerViewAdapterHelper.md
             "BaseRecyclerViewAdapterHelper": "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4",
             //刷新 https://github.com/scwang90/SmartRefreshLayout
-//    api  'com.scwang.smart:refresh-layout-kernel:2.0.3'      //核心必须依赖 (必选)
-//    api  'com.scwang.smart:refresh-header-classics:2.0.3'    //经典刷新头 (可选)
-//    api  'com.scwang.smart:refresh-header-radar:2.0.3'       //雷达刷新头 (可选)
-//    api  'com.scwang.smart:refresh-header-falsify:2.0.3'     //虚拟刷新头 (可选)
-//    api  'com.scwang.smart:refresh-header-material:2.0.3'    //谷歌刷新头 (可选)
-//    api  'com.scwang.smart:refresh-header-two-level:2.0.3'   //二级刷新头 (可选)
-//    api  'com.scwang.smart:refresh-footer-ball:2.0.3'        //球脉冲加载 (可选)
-//    api  'com.scwang.smart:refresh-footer-classics:2.0.3'    //经典加载 (可选)
+            //    api  'com.scwang.smart:refresh-layout-kernel:2.0.3'      //核心必须依赖 (必选)
+            //    api  'com.scwang.smart:refresh-header-classics:2.0.3'    //经典刷新头 (可选)
+            //    api  'com.scwang.smart:refresh-header-radar:2.0.3'       //雷达刷新头 (可选)
+            //    api  'com.scwang.smart:refresh-header-falsify:2.0.3'     //虚拟刷新头 (可选)
+            //    api  'com.scwang.smart:refresh-header-material:2.0.3'    //谷歌刷新头 (可选)
+            //    api  'com.scwang.smart:refresh-header-two-level:2.0.3'   //二级刷新头 (可选)
+            //    api  'com.scwang.smart:refresh-footer-ball:2.0.3'        //球脉冲加载 (可选)
+            //    api  'com.scwang.smart:refresh-footer-classics:2.0.3'    //经典加载 (可选)
             //状态
             "loadsir"                      : "com.kingja.loadsir:loadsir:1.3.8",
             //导航
 
             //material-dialogs
             //dialog-core https://github.com/afollestad/material-dialogs/blob/main/documentation/CORE.md
-            "material-dialogs-core"        : "com.afollestad.material-dialogs:core:3.3.0",
+            "material-dialogs-core"        : "com.afollestad.material-dialogs:core:${version["materialDialogsVersion"]}",
             //dialog-input https://github.com/afollestad/material-dialogs/blob/main/documentation/INPUT.md
-            "material-dialogs-input"       : "com.afollestad.material-dialogs:input:3.3.0",
+            "material-dialogs-input"       : "com.afollestad.material-dialogs:input:${version["materialDialogsVersion"]}",
             //dialog生命周期 https://github.com/afollestad/material-dialogs/blob/main/documentation/LIFECYCLE.md
-            "material-dialogs-lifecycle"   : "com.afollestad.material-dialogs:lifecycle:3.3.0",
+            "material-dialogs-lifecycle"   : "com.afollestad.material-dialogs:lifecycle:${version["materialDialogsVersion"]}",
             //dialog底部表单 https://github.com/afollestad/material-dialogs/blob/main/documentation/BOTTOMSHEETS.md
-            "material-dialogs:bottomsheets": "com.afollestad.material-dialogs:bottomsheets:3.3.0",
+            "material-dialogs:bottomsheets": "com.afollestad.material-dialogs:bottomsheets:${version["materialDialogsVersion"]}",
 
             //简易通用popwindow https://github.com/pinguo-zhouwei/CustomPopwindow
             "CustomPopwindow"              : "com.github.pinguo-zhouwei:CustomPopwindow:2.1.1",
 
-
             //h5相关 https://github.com/Justson/AgentWeb
             //agentweb核心
-            "agentweb"                     : "com.just.agentweb:agentweb-androidx:4.1.4",// (必选)
+            "agentweb"                     : "com.just.agentweb:agentweb-androidx:${version["agentwebVersion"]}",// (必选)
             //agentweb文件选择
-            "filechooser"                  : "com.just.agentweb:filechooser-androidx:4.1.4",// (必选)
+            "filechooser"                  : "com.just.agentweb:filechooser-androidx:${version["agentwebVersion"]}",// (非必选)
             //agentweb文件下载
-            "downloader"                   : "com.download.library:downloader-androidx:4.1.4",// (必选)
+            "downloader"                   : "com.download.library:downloader-androidx:${version["agentwebVersion"]}",// (非必选)
     ]
 
 

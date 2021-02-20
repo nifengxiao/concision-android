@@ -11,7 +11,7 @@ import com.creator.concisiondemo.viewmodel.state.MainViewModel
  * @Author:         Creator
  * @Description:    首页
  */
-class MainActivity : BaseActivity<MainViewModel,ActivityMainBinding>() {
+class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
 
     override fun layoutId(): Int {
         return R.layout.activity_main
