@@ -22,25 +22,18 @@ class ArticleAdapter : BaseQuickAdapter<ArticleBean, BaseViewHolder>(R.layout.rc
                 R.id.item_home_author,
                 if (author.isNotEmpty()) author else shareUser
             )
-            holder.setText(R.id.item_home_content, title.toHtml())
-            holder.setText(R.id.item_home_type2, "$superChapterName·$chapterName".toHtml())
+            holder.setText(R.id.item_home_content, title)
+            holder.setText(R.id.item_home_type2, "$superChapterName·$chapterName")
             holder.setText(R.id.item_home_date, niceDate)
-//            if (showTag) {
-                //展示标签
-                holder.setGone(R.id.item_home_new, !fresh)
-                holder.setGone(R.id.item_home_top, type != 1)
-                if (tags.isNotEmpty()) {
-                    holder.setGone(R.id.item_home_type1, false)
-                    holder.setText(R.id.item_home_type1, tags[0].name)
-                } else {
-                    holder.setGone(R.id.item_home_type1, true)
-                }
-//            } else {
-//                //隐藏所有标签
-//                holder.setGone(R.id.item_home_top, true)
-//                holder.setGone(R.id.item_home_type1, true)
-//                holder.setGone(R.id.item_home_new, true)
-//            }
+            //展示标签
+            holder.setGone(R.id.item_home_new, !fresh)
+            holder.setGone(R.id.item_home_top, type != 1)
+            if (tags.isNotEmpty()) {
+                holder.setGone(R.id.item_home_type1, false)
+                holder.setText(R.id.item_home_type1, tags[0].name)
+            } else {
+                holder.setGone(R.id.item_home_type1, true)
+            }
         }
     }
 

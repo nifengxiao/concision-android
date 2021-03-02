@@ -8,9 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.creator.concision.R
 import com.creator.concision.core.app.appContext
 import com.creator.concision.core.viewmodel.BaseViewModel
-import com.creator.concision.ext.dismissLoadingExt
 import com.creator.concision.ext.getVmClass
-import com.creator.concision.ext.showLoadingExt
 import com.creator.concision.network.manager.NetState
 import com.creator.concision.network.manager.NetworkStateManager
 
@@ -95,6 +93,16 @@ abstract class CommonBaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : Ap
     }
 
     /**
+     * 打开加载框
+     */
+    abstract fun showLoading(message: String = appContext.getString(R.string.def_loading_message))
+
+    /**
+     * 关闭加载框
+     */
+    abstract fun dismissLoading()
+
+    /**
      * 初始化DataBinding
      */
     fun initDataBind() {
@@ -102,19 +110,5 @@ abstract class CommonBaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : Ap
         mDatabind.lifecycleOwner = this
     }
 
-
-    /**
-     * 打开加载框
-     */
-    fun showLoading(message: String = appContext.getString(R.string.def_loading_message)){
-        showLoadingExt(message)
-    }
-
-    /**
-     * 关闭加载框
-     */
-    fun dismissLoading(){
-        dismissLoadingExt()
-    }
 
 }

@@ -1,16 +1,14 @@
 package com.creator.concisiondemo.ui.main
 
 import android.os.Bundle
-import androidx.navigation.Navigation.findNavController
-import androidx.navigation.ui.setupWithNavController
 import com.blankj.utilcode.util.LogUtils
 import com.creator.concisiondemo.R
-import com.creator.concisiondemo.app.base.BaseFragment
+import com.creator.config.app.base.BaseFragment
 import com.creator.concisiondemo.databinding.FragmentMainBinding
 import com.creator.concisiondemo.ui.MainViewModel
-import com.creator.concisiondemo.utils.init
 import com.creator.concisiondemo.utils.initMain
-import com.creator.concisiondemo.utils.interceptLongClick
+import com.creator.config.utils.init
+import com.creator.config.utils.interceptLongClick
 import kotlinx.android.synthetic.main.fragment_main.*
 
 /**
@@ -18,7 +16,7 @@ import kotlinx.android.synthetic.main.fragment_main.*
  * @Author:         Creator
  * @Description:    主页
  */
-class MainFragment: BaseFragment<MainViewModel,FragmentMainBinding>(){
+class MainFragment: BaseFragment<MainViewModel, FragmentMainBinding>(){
 
 
     override fun layoutId(): Int {

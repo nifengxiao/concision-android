@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import com.blankj.utilcode.util.LogUtils
 import com.creator.concision.core.viewmodel.BaseViewModel
 import com.creator.concision.ext.request
-import com.creator.concisiondemo.data.model.base.BaseListBean
+import com.creator.config.data.model.base.BaseListBean
 import com.creator.concisiondemo.data.model.bean.ArticleBean
 import com.creator.concisiondemo.network.HttpRequestCoroutine
 

@@ -1,3 +1,4 @@
+include ':config'
 include ':concision'
 include ':app'
 rootProject.name = "ConcisionDemo"

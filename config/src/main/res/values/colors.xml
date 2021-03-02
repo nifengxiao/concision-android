@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  参考文献 -->
+    <!-- 原文 https://medium.com/over-engineering/setting-up-a-material-components-theme-for-android-fbf7774da739-->
+    <!-- 机翻 https://www.jianshu.com/p/533b397c63f0-->
+    <!-- Android材料设计工具 https://www.materialpalette.com/icons  -->
+
+    <!--  //////////////////////////////////主题相关(可配置可新增)//////////////////////////////////////////////////  -->
+    <!-- 白天模式 -->
+    <!-- 主题色  -->
+    <color name="primary">#009688</color>
+    <!--  主题色(较暗)  -->
+    <color name="primary_dark">#00796B</color>
+    <!--  主题色(较亮)  -->
+    <color name="primary_light">#B2DFDB</color>
+    <!--  按钮背景颜色  -->
+    <color name="accent">#009688</color>
+    <!--  主题文字颜色  -->
+    <color name="primary_text">#212121</color>
+    <!--  二级主题文字颜色  -->
+    <color name="secondary_text">#757575</color>
+    <!--  小图标颜色  -->
+    <color name="icons">#FFFFFF</color>
+    <!--  横线颜色  -->
+    <color name="divider">#BDBDBD</color>
+    <!--  背景色 -->
+    <color name="background">#d8d8d8</color>
+
+    <!--  //////////////////////////////////$请输入附加模块一名字(可配置可新增)//////////////////////////////////////////////////  -->
+
+    <!--  //////////////////////////////////$请输入附加模块二名字(可配置可新增)//////////////////////////////////////////////////  -->
+
+
+    <!--  //////////////////////////////////颜色相关(可新增)//////////////////////////////////////////////////  -->
+    <!--  纯黑  -->
+    <color name="black">#FF000000</color>
+    <!--  纯白  -->
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorBlack666">#666</color>
+    <color name="colorBlack333">#333</color>
+
+</resources>

@@ -1,23 +1,14 @@
 package com.creator.concisiondemo.ui.web
 
-import android.app.Notification
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.app.PendingIntent
-import android.content.Context.NOTIFICATION_SERVICE
-import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.widget.FrameLayout
 import com.creator.concision.ext.nav
 import com.creator.concisiondemo.R
-import com.creator.concisiondemo.app.App
-import com.creator.concisiondemo.app.base.BaseFragment
 import com.creator.concisiondemo.data.model.bean.WebBean
+import com.creator.config.app.base.BaseFragment
 import com.creator.concisiondemo.databinding.FragmentGuideBinding
-import com.creator.concisiondemo.ui.MainActivity
-import com.creator.concisiondemo.utils.hideSoftKeyboard
-import com.creator.concisiondemo.utils.initClose
+import com.creator.config.utils.hideSoftKeyboard
+import com.creator.config.utils.initClose
 import com.just.agentweb.AgentWeb
 import kotlinx.android.synthetic.main.fragment_web.*
 import kotlinx.android.synthetic.main.include_toolbar.*

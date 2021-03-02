@@ -110,7 +110,7 @@ android {
 
 dependencies {
     //核心框架
-    implementation project(path: ':concision')
+    implementation project(path: ':config')
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
 
@@ -124,7 +124,6 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.3'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.3'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.3'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.3.3'
 }
 repositories {
     mavenCentral()

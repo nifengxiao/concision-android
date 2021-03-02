@@ -12,8 +12,8 @@ import androidx.navigation.Navigation
 import com.blankj.utilcode.util.ToastUtils
 import com.creator.concision.network.manager.NetState
 import com.creator.concisiondemo.R
-import com.creator.concisiondemo.app.base.BaseActivity
 import com.creator.concisiondemo.data.isInit
+import com.creator.config.app.base.BaseActivity
 import com.creator.concisiondemo.databinding.ActivityMainBinding
 
 /**

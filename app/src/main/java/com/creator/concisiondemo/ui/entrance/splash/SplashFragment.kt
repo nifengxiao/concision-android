@@ -8,10 +8,11 @@ import com.blankj.utilcode.util.LogUtils
 import com.creator.concision.ext.nav
 import com.creator.concision.ext.navigateAction
 import com.creator.concisiondemo.R
-import com.creator.concisiondemo.app.base.BaseFragment
-import com.creator.concisiondemo.app.sp.AppPreHelper
 import com.creator.concisiondemo.data.isInit
+import com.creator.config.app.base.BaseFragment
+import com.creator.config.app.sp.AppPreHelper
 import com.creator.concisiondemo.databinding.FragmentSplashBinding
+import com.creator.config.data.model.bean.SettingBean
 
 /**
  * @CreateDate:     2021/2/20
