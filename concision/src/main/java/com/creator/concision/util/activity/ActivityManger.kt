@@ -5,7 +5,7 @@ import java.util.*
 
 /**
  * @CreateDate: 2021/1/11
- * @Author: Creator
+ * @Author: hegaojian
  * @Description: activity管理类
  */
 object ActivityManger {

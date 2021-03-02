@@ -29,11 +29,12 @@ var lastNavTime = 0L
  * @param bundle 传递的参数
  * @param interval 多少毫秒内不可重复点击 默认0.5秒
  */
-fun NavController.navigateAction(resId: Int, bundle: Bundle? = null, interval: Long = 500) {
+fun NavController.navigateAction(resId: Int, bundle: Bundle? = null, interval: Long = 500):NavController {
     val currentTime = System.currentTimeMillis()
     if (currentTime >= lastNavTime + interval) {
         lastNavTime = currentTime
         navigate(resId, bundle)
     }
+    return this
 }
 

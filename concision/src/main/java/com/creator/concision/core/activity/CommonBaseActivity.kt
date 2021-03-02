@@ -16,7 +16,7 @@ import com.creator.concision.network.manager.NetworkStateManager
 
 /**
  * @CreateDate: 2021/1/11
- * @Author: Creator
+ * @Author: hegaojian
  * @Description: 公共BaseActivity基类
  */
 abstract class CommonBaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : AppCompatActivity() {
@@ -116,8 +116,5 @@ abstract class CommonBaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : Ap
     fun dismissLoading(){
         dismissLoadingExt()
     }
-
-
-
 
 }

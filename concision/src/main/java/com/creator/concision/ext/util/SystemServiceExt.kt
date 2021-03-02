@@ -25,10 +25,10 @@ import androidx.core.content.ContextCompat
 
 /**
  * @CreateDate:     2021/1/6 17:02
- * @Author:         Creator
+ * @Author:         hegaojian
  * @Description:    服务类型扩展函数
  * @Functions:
- * 1.获取系统中的相关管理器
+ * 获取系统中的相关管理器
  */
 inline fun <reified T> Context.getSystemService(): T? =
     ContextCompat.getSystemService(this, T::class.java)

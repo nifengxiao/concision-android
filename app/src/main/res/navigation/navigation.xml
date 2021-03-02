@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/entrance_navigation"
+    app:startDestination="@id/splash_fragment">
+
+    <fragment
+        android:id="@+id/splash_fragment"
+        android:name="com.creator.concisiondemo.ui.entrance.splash.SplashFragment"
+        android:label="splash"
+        tools:layout="@layout/fragment_splash">
+
+        <!--   popUpTo用于返回时弹出栈之上的fragment  popUpToInclusive表示是否连同目的地一起弹出-->
+        <action
+            android:id="@+id/action_splash_to_guide"
+            app:destination="@+id/guide_fragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popUpTo="@id/splash_fragment"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_splash_to_main"
+            app:destination="@+id/main_fragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popUpTo="@id/splash_fragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/guide_fragment"
+        android:name="com.creator.concisiondemo.ui.entrance.guide.GuideFragment"
+        android:label="guide"
+        tools:layout="@layout/fragment_guide">
+
+        <action
+            android:id="@+id/action_guide_main"
+            app:destination="@+id/main_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/guide_fragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/main_fragment"
+        android:name="com.creator.concisiondemo.ui.main.MainFragment"
+        android:label="main"
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@+id/action_main_login"
+            app:destination="@+id/login_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/login_fragment"
+        android:name="com.creator.concisiondemo.ui.account.LoginFragment"
+        android:label="login"
+        tools:layout="@layout/fragment_login" />
+
+    <fragment
+        android:id="@+id/web_fragment"
+        android:name="com.creator.concisiondemo.ui.web.WebFragment"
+        android:label="web"
+        tools:layout="@layout/fragment_web" />
+
+    <action
+        android:id="@+id/action_to_web"
+        app:destination="@id/web_fragment"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+
+</navigation>

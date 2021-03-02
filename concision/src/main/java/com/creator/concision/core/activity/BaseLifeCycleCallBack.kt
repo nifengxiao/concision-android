@@ -8,7 +8,7 @@ import com.creator.concision.util.activity.ActivityManger
 
 /**
  * @CreateDate: 2021/1/11
- * @Author: Creator
+ * @Author: hegaojian
  * @Description: activity生命周期监听
  */
 class BaseLifeCycleCallBack : Application.ActivityLifecycleCallbacks {

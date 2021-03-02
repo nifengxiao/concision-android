@@ -110,7 +110,8 @@ dependencies {
 //    api  'com.scwang.smart:refresh-footer-classics:2.0.3'    //经典加载 (可选)
     //状态
     api rootProject.ext.dependencies["loadsir"]
-    //导航
+    //导航器
+    api rootProject.ext.dependencies["BottomNavigationViewEx"]
 
     //material-dialogs
     //dialog-core https://github.com/afollestad/material-dialogs/blob/main/documentation/CORE.md
@@ -123,9 +124,20 @@ dependencies {
     api rootProject.ext.dependencies["material-dialogs:bottomsheets"]
     //简易通用popwindow https://github.com/pinguo-zhouwei/CustomPopwindow
     api rootProject.ext.dependencies["CustomPopwindow"]
+
+
     //h5相关 https://github.com/Justson/AgentWeb
     api rootProject.ext.dependencies["agentweb"]
     api rootProject.ext.dependencies["filechooser"]
     api rootProject.ext.dependencies["downloader"]
+
+    //刷新控件
+    api rootProject.ext.dependencies["refresh-layout-kernel"]
+    api rootProject.ext.dependencies["refresh-header-material"]
+    api rootProject.ext.dependencies["refresh-footer-classics"]
+
+    //状态栏管理
+    api rootProject.ext.dependencies["immersionbar"]
+    api rootProject.ext.dependencies["immersionbar-ktx"]
 
 }

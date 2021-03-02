@@ -60,6 +60,7 @@ ext {
             "Luban"                        : "top.zibin:Luban:1.1.8",
             //图片选择 https://github.com/LuckSiege/PictureSelector/blob/master/README_CN.md
             "picture_library"              : "com.github.LuckSiege.PictureSelector:picture_library:v2.6.0",
+
             //工具相关
             //工具库(基本涵盖日常所需功能 无需混淆)
             //功能目录 https://github.com/Blankj/AndroidUtilCode/blob/master/lib/utilcode/README-CN.md
@@ -75,14 +76,15 @@ ext {
             //列表适配器(无需混淆) https://github.com/CymChad/BaseRecyclerViewAdapterHelper/blob/master/readme/0-BaseRecyclerViewAdapterHelper.md
             "BaseRecyclerViewAdapterHelper": "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4",
             //刷新 https://github.com/scwang90/SmartRefreshLayout
+            "refresh-layout-kernel"        : "com.scwang.smart:refresh-layout-kernel:2.0.3",
             //    api  'com.scwang.smart:refresh-layout-kernel:2.0.3'      //核心必须依赖 (必选)
             //    api  'com.scwang.smart:refresh-header-classics:2.0.3'    //经典刷新头 (可选)
             //    api  'com.scwang.smart:refresh-header-radar:2.0.3'       //雷达刷新头 (可选)
             //    api  'com.scwang.smart:refresh-header-falsify:2.0.3'     //虚拟刷新头 (可选)
-            //    api  'com.scwang.smart:refresh-header-material:2.0.3'    //谷歌刷新头 (可选)
+            "refresh-header-material"      : 'com.scwang.smart:refresh-header-material:2.0.3',//谷歌刷新头 (可选)
             //    api  'com.scwang.smart:refresh-header-two-level:2.0.3'   //二级刷新头 (可选)
             //    api  'com.scwang.smart:refresh-footer-ball:2.0.3'        //球脉冲加载 (可选)
-            //    api  'com.scwang.smart:refresh-footer-classics:2.0.3'    //经典加载 (可选)
+            "refresh-footer-classics"      : 'com.scwang.smart:refresh-footer-classics:2.0.3',  //经典加载 (可选)
             //状态
             "loadsir"                      : "com.kingja.loadsir:loadsir:1.3.8",
             //导航
@@ -107,6 +109,20 @@ ext {
             "filechooser"                  : "com.just.agentweb:filechooser-androidx:${version["agentwebVersion"]}",// (非必选)
             //agentweb文件下载
             "downloader"                   : "com.download.library:downloader-androidx:${version["agentwebVersion"]}",// (非必选)
+
+            //组件
+            //主页导航栏 https://github.com/ittianyu/BottomNavigationViewEx/blob/master/README_ZH.md
+            "BottomNavigationViewEx"       : "com.github.ittianyu:BottomNavigationViewEx:2.0.4",
+//            "design"                       : "com.android.support:design:28.0.0",
+            //导航栏配合使用（带有数字的小红点）
+            "badgeview"                    : 'q.rorbin:badgeview:1.1.0',
+
+            //状态栏管理 https://github.com/gyf-dev/ImmersionBar
+            "immersionbar"                 : 'com.gyf.immersionbar:immersionbar:3.0.0',
+            // fragment快速实现（可选）
+            "immersionbar-components"      : 'com.gyf.immersionbar:immersionbar-components:3.0.0',
+            // kotlin扩展（可选）
+            "immersionbar-ktx"             : 'com.gyf.immersionbar:immersionbar-ktx:3.0.0'
     ]
 
 

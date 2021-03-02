@@ -8,7 +8,7 @@ import java.lang.reflect.ParameterizedType
 
 /**
  * @CreateDate:     2021/1/6 17:24
- * @Author:         YuanFeng
+ * @Author:         hegaojian
  * @Description:    获取ViewModel
  */
 

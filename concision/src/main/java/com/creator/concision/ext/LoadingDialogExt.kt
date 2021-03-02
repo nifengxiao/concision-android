@@ -12,7 +12,7 @@ import com.creator.concision.R
 import com.creator.concision.ext.util.getResString
 
 /**
- * @author : hgj
+ * @author : hegaojian
  * @date : 2020/6/28
  */
 

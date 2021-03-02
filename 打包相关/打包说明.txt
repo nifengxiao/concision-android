@@ -1,44 +1,22 @@
- ‰»Î√‹‘øø‚ø⁄¡Ó:                                                                                                                
-√‹‘øø‚¿‡–Õ: jks                                                                                                              
-√‹‘øø‚Ã·π©∑Ω: SUN                                                                                                             
-                                                                                                                        
-ƒ˙µƒ√‹‘øø‚∞¸∫¨ 1 ∏ˆÃıƒø                                                                                                           
-                                                                                                                        
-±√˚: sclykjyxgs                                                                                                          
-¥¥Ω®»’∆⁄: 2019-11-18                                                                                                        
-Ãıƒø¿‡–Õ: PrivateKeyEntry                                                                                                   
-÷§ È¡¥≥§∂»: 1                                                                                                                
-÷§ È[1]:                                                                                                                  
-À˘”–’ﬂ: CN=sclykjyxgs, OU=sclykjyxgs, O=sclykjyxgs, L=sclykjyxgs, ST=sclykjyxgs, C=sclykjyxgs                              
-∑¢≤º’ﬂ: CN=sclykjyxgs, OU=sclykjyxgs, O=sclykjyxgs, L=sclykjyxgs, ST=sclykjyxgs, C=sclykjyxgs                              
-–Ú¡–∫≈: 3a2c318d                                                                                                           
-”––ß∆⁄Œ™ Mon Nov 18 09:48:19 CST 2019 ÷¡ Fri Nov 11 09:48:19 CST 2044                                                        
-÷§ È÷∏Œ∆:                                                                                                                   
-         MD5:  35:7B:CC:D7:18:0D:2D:62:F9:10:1A:98:D4:7A:AA:85                                                          
-         SHA1: 6D:87:2F:10:8B:00:8E:42:DF:57:C8:8C:08:06:00:D0:FD:A8:A8:30                                              
-         SHA256: 21:73:96:45:5E:0F:E6:AB:52:4D:B1:94:7B:3D:69:C5:C3:48:D0:19:15:43:9C:59:5C:C0:0F:24:99:C1:5F:D6        
-«©√˚À„∑®√˚≥∆: SHA256withRSA                                                                                                   
-÷˜ÃÂπ´π≤√‹‘øÀ„∑®: 2048 Œª RSA √‹‘ø                                                                                                 
-∞Ê±æ: 3                                                                                                                   
-                                                                                                                        
-¿©’π:                                                                                                                     
-                                                                                                                        
-#1: ObjectId: 2.5.29.14 Criticality=false                                                                               
-SubjectKeyIdentifier [                                                                                                  
-KeyIdentifier [                                                                                                         
-0000: B4 32 9D B4 62 DD 37 4D   C4 A1 97 FC 43 97 F4 91  .2..b.7M....C...                                               
-0010: 1E F9 35 D7                                        ..5.                                                           
-]                                                                                                                       
-]                                                                                                                       
-                                                                                                                        
-                                                                                                                        
-                                                                                                                        
-*******************************************                                                                             
-*******************************************                                                                             
-                                                                                                                        
-                                                                                                                        
-                                                                                                                        
-Warning:                                                                                                                
-JKS √‹‘øø‚ π”√◊®”√∏Ò Ω°£Ω®“È π”√ "keytool -importkeystore -srckeystore C:\Users\GA-PC\Desktop\cg-client-android\app\scly              
-kjyxgs.jks -destkeystore C:\Users\GA-PC\Desktop\cg-client-android\app\sclykjyxgs.jks -deststoretype pkcs12" «®“∆µΩ––“µ±Í      
-◊º∏Ò Ω PKCS12°£                                                                                                             
+ËæìÂÖ•ÂØÜÈí•Â∫ìÂè£‰ª§:
+ÂØÜÈí•Â∫ìÁ±ªÂûã: PKCS12
+ÂØÜÈí•Â∫ìÊèê‰æõÊñπ: SUN
+
+ÊÇ®ÁöÑÂØÜÈí•Â∫ìÂåÖÂê´ 1 ‰∏™Êù°ÁõÆ
+
+Âà´Âêç: concision
+ÂàõÂª∫Êó•Êúü: 2021-2-20
+Êù°ÁõÆÁ±ªÂûã: PrivateKeyEntry
+ËØÅ‰π¶ÈìæÈïøÂ∫¶: 1
+ËØÅ‰π¶[1]:
+ÊâÄÊúâËÄÖ: CN=concision, OU=concision, O=concision, L=concision, ST=concision, C=concision
+ÂèëÂ∏ÉËÄÖ: CN=concision, OU=concision, O=concision, L=concision, ST=concision, C=concision
+Â∫èÂàóÂè∑: 1fcf40ae
+ÊúâÊïàÊúü‰∏∫ Sat Feb 20 13:40:11 CST 2021 Ëá≥ Wed Feb 14 13:40:11 CST 2046
+ËØÅ‰π¶ÊåáÁ∫π:
+         MD5:  74:24:99:C0:F9:5E:03:1D:87:69:C8:E9:6B:3F:FB:5F
+         SHA1: 7A:CD:DC:86:3F:23:3A:49:32:AC:6B:13:39:8E:72:35:63:1A:74:62
+         SHA256: 7C:DB:A3:B5:40:BA:0D:E3:AA:A5:B6:E7:75:4B:3B:30:A3:01:9C:DF:45:E5:08:85:E7:57:C7:5C:AC:38:60:41
+Á≠æÂêçÁÆóÊ≥ïÂêçÁß∞: SHA256withRSA
+‰∏ª‰ΩìÂÖ¨ÂÖ±ÂØÜÈí•ÁÆóÊ≥ï: 2048 ‰Ωç RSA ÂØÜÈí•
+ÁâàÊú¨: 3

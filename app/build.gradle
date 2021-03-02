@@ -25,16 +25,16 @@ android {
 
     signingConfigs {
         debug {
-            keyAlias 'sclykjyxgs'
-            keyPassword 'sclykjyxgs'
-            storeFile file('../打包相关/sclykjyxgs.jks')
-            storePassword 'sclykjyxgs'
+            keyAlias 'concision'
+            keyPassword 'concision'
+            storeFile file('../打包相关/concision.jks')
+            storePassword 'concision'
         }
         release {
-            keyAlias "sclykjyxgs"
-            storePassword "sclykjyxgs"
-            storeFile file("../打包相关/sclykjyxgs.jks")//签名⽂件的path
-            keyPassword "sclykjyxgs"
+            keyAlias "concision"
+            storePassword "concision"
+            storeFile file("../打包相关/concision.jks")//签名⽂件的path
+            keyPassword "concision"
         }
     }
 
@@ -111,11 +111,20 @@ android {
 dependencies {
     //核心框架
     implementation project(path: ':concision')
-    //kotlin
-    implementation "androidx.core:core-ktx:+"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
 
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.3'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.3'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.3'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.3'
 }
 repositories {
     mavenCentral()

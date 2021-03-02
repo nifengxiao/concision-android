@@ -7,7 +7,7 @@ import android.widget.TextView
 
 /**
  * @CreateDate:     2021/1/6 16:57
- * @Author:         Creator
+ * @Author:         hegaojian
  * @Description:    EditTextView和TextView相关的扩展函数
  * @Functions:
  * 1.简化输入框

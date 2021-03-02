@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModelStoreOwner
 
 /**
  * @CreateDate: 2021/1/11
- * @Author: Creator
+ * @Author: hegaojian
  * @Description: Application
  */
 open class BaseApp : Application(), ViewModelStoreOwner {

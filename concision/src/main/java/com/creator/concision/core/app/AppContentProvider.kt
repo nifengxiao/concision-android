@@ -13,7 +13,7 @@ import com.creator.concision.network.manager.NetworkStateReceive
 
 /**
  * @CreateDate: 2021/1/11
- * @Author: Creator
+ * @Author: hegaojian
  * @Description: App内容提供者
  */
 val appContext: Application by lazy { AppContentProvider.app }
@@ -40,7 +40,6 @@ class AppContentProvider : ContentProvider() {
             mNetworkStateReceive,
             IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION)
         )
-
         if (watchActivityLife) application.registerActivityLifecycleCallbacks(BaseLifeCycleCallBack())
         if (watchAppLife) ProcessLifecycleOwner.get().lifecycle.addObserver(BaseAppLifeObserver)
     }

@@ -3,4 +3,11 @@
     package="com.creator.concision">
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <application>
+        <provider
+            android:authorities="${applicationId}.KtxInstaller"
+            android:name=".core.app.AppContentProvider"
+            android:exported="false"/>
+    </application>
 </manifest>

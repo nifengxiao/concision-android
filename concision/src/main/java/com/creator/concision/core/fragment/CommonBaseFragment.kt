@@ -20,7 +20,7 @@ import com.creator.concision.network.manager.NetworkStateManager
 
 /**
  * @CreateDate: 2021/1/11
- * @Author: Creator
+ * @Author: hegaojian
  * @Description: ViewModelFragment基类
  */
 abstract class CommonBaseFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fragment() {

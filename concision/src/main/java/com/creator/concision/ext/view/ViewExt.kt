@@ -4,7 +4,7 @@ import android.view.View
 
 /**
  * @CreateDate:     2021/1/6 16:59
- * @Author:         Creator
+ * @Author:         hegaojian
  * @Description:    View相关扩展函数
  * @Functions:
  * 1.设置view显示隐藏

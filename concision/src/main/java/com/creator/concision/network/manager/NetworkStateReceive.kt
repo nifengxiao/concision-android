@@ -16,7 +16,7 @@ class NetworkStateReceive : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
         if (intent.action == ConnectivityManager.CONNECTIVITY_ACTION) {
             if(!isInit){
-                if (!NetworkUtils.isAvailable()) {
+                if (!NetworkUtils.isConnected()) {
                     //收到没有网络时判断之前的值是不是有网络，如果有网络才提示通知 ，防止重复通知
                     NetworkStateManager.instance.mNetworkStateCallback.value?.let {
                         if(it.isSuccess){

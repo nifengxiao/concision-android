@@ -8,7 +8,7 @@ import com.creator.concision.core.app.appContext
 
 /**
  * @CreateDate:     2021/1/6 17:02
- * @Author:         Creator
+ * @Author:         hegaojian
  * @Description:    字符串扩展函数
  * @Functions:
  * 1.获取string.xml中字符串

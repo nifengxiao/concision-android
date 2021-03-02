@@ -7,7 +7,7 @@ import com.creator.concision.util.def.livedata.BooleanLiveData
 
 /**
  * @CreateDate: 2021/1/11
- * @Author: Creator
+ * @Author: hegaojian
  * @Description: app生命周期监听
  */
 object BaseAppLifeObserver : LifecycleObserver {

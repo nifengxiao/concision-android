@@ -5,7 +5,7 @@ import com.creator.concision.R
 
 /**
  * @CreateDate:     2021/1/6 17:03
- * @Author:         Creator
+ * @Author:         hegaojian
  * @Description:    日志扩展函数
  */
 val TAG = R.string.lib_name.getResString()
