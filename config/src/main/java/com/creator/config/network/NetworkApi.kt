@@ -4,13 +4,12 @@ import android.util.Log
 import com.creator.concision.core.app.appContext
 import com.creator.concision.network.BaseNetworkApi
 import com.creator.concision.network.interceptor.CacheInterceptor
-import com.franmontiel.persistentcookiejar.PersistentCookieJar
-import com.franmontiel.persistentcookiejar.cache.SetCookieCache
-import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor
+
 import com.google.gson.GsonBuilder
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.File
@@ -41,28 +40,24 @@ class NetworkApi : BaseNetworkApi() {
         builder.apply {
             //设置缓存配置 缓存最大10M
             cache(Cache(File(appContext.cacheDir, "concision"), 10 * 1024 * 1024))
-            //添加Cookies自动持久化
-            cookieJar(cookieJar)
             //示例：添加公共heads 注意要设置在日志拦截器之前，不然Log中会不显示head信息
             addInterceptor(MyHeadInterceptor())
             //添加缓存拦截器 可传入缓存天数，不传默认7天
             addInterceptor(CacheInterceptor())
             // 日志拦截器
             val interceptor =
-                HttpLoggingInterceptor(object : HttpLoggingInterceptor.Logger {
-                    override fun log(message: String) {
-                        try {
-                            val text: String = URLDecoder.decode(message, "utf-8")
-                            Log.e("OKHttp-----", text)
-                        } catch (e: UnsupportedEncodingException) {
-                            e.printStackTrace()
-                            Log.e("OKHttp-----", message)
-                        }
+                HttpLoggingInterceptor(HttpLoggingInterceptor.Logger { message ->
+                    try {
+                        val text: String = URLDecoder.decode(message, "utf-8")
+                        Log.e("OKHttp-----", text)
+                    } catch (e: UnsupportedEncodingException) {
+                        e.printStackTrace()
+                        Log.e("OKHttp-----", message)
                     }
                 })
             addInterceptor(interceptor)
-            //这行必须加 不然默认不打印
-            interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+//            这行必须加 不然默认不打印
+            interceptor.level = HttpLoggingInterceptor.Level.BODY;
             //超时时间 连接、读、写
             connectTimeout(10, TimeUnit.SECONDS)
             readTimeout(5, TimeUnit.SECONDS)
@@ -81,9 +76,6 @@ class NetworkApi : BaseNetworkApi() {
         }
     }
 
-    val cookieJar: PersistentCookieJar by lazy {
-        PersistentCookieJar(SetCookieCache(), SharedPrefsCookiePersistor(appContext))
-    }
 
 }
 

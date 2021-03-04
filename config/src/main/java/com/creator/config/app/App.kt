@@ -1,5 +1,6 @@
 package com.creator.config.app
 
+import android.content.Context
 import androidx.multidex.MultiDex
 import com.creator.concision.core.app.BaseApp
 import com.creator.config.app.sp.AppPreHelper
@@ -25,12 +26,16 @@ class App : BaseApp() {
         lateinit var instance: App
     }
 
+    override fun attachBaseContext(base: Context?) {
+        super.attachBaseContext(base)
+        MultiDex.install(base);
+    }
 
     override fun onCreate() {
         super.onCreate()
-        instance = this
         //分包
-        MultiDex.install(this)
+//        MultiDex.install(this)
+        instance = this
         //初始化基本配置
         AppPreHelper.setting = SettingBean()
         //界面加载管理 初始化

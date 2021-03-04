@@ -8,25 +8,25 @@
     <!-- Android材料设计工具 https://www.materialpalette.com/icons  -->
 
     <!--  //////////////////////////////////主题相关(可配置可新增)//////////////////////////////////////////////////  -->
-    <!-- 白天模式 -->
+    <!-- 深夜模式 -->
     <!-- 主题色  -->
     <color name="primary">#1A1818</color>
     <!--  主题色(较暗)  -->
     <color name="primary_dark">#0E0E0E</color>
-    <!--    &lt;!&ndash;  主题色(较亮)  &ndash;&gt;-->
-    <!--    <color name="primary_light">#262222</color>-->
-    <!--    &lt;!&ndash;  按钮背景颜色  &ndash;&gt;-->
-    <!--    <color name="accent">#009688</color>-->
-    <!--    &lt;!&ndash;  主题文字颜色  &ndash;&gt;-->
-    <!--    <color name="primary_text">#212121</color>-->
-    <!--    &lt;!&ndash;  二级主题文字颜色  &ndash;&gt;-->
-    <!--    <color name="secondary_text">#757575</color>-->
-    <!--    &lt;!&ndash;  小图标颜色  &ndash;&gt;-->
-    <!--    <color name="icons">#FFFFFF</color>-->
-    <!--    &lt;!&ndash;  横线颜色  &ndash;&gt;-->
-    <!--    <color name="divider">#BDBDBD</color>-->
-    <!--    &lt;!&ndash;  背景色 &ndash;&gt;-->
-    <!--    <color name="background">#d8d8d8</color>-->
+    <!--  主题色(较亮)  -->
+    <color name="primary_light">#262222</color>
+    <!--  按钮背景颜色  -->
+    <color name="accent">#9CAB2D</color>
+    <!--  主题文字颜色  -->
+    <color name="primary_text">#212121</color>
+    <!--  二级主题文字颜色  -->
+    <color name="secondary_text">#757575</color>
+    <!--  小图标颜色  -->
+    <color name="icons">#FFFFFF</color>
+    <!--  横线颜色  -->
+    <color name="divider">#BDBDBD</color>
+    <!--  背景色 -->
+    <color name="background">#d8d8d8</color>
 
 
 </resources>

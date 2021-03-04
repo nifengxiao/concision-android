@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--  //////////////////////////////////如Android自带深色模式不符合自己的需求，可在此进行配置//////////////////////////////////////////////////  -->
+<!--    &lt;!&ndash;  //////////////////////////////////如Android自带深色模式不符合自己的需求，可在此进行配置//////////////////////////////////////////////////  &ndash;&gt;-->
 
-    <!--  参考文献 -->
-    <!-- 原文 https://medium.com/over-engineering/setting-up-a-material-components-theme-for-android-fbf7774da739-->
-    <!-- 机翻 https://www.jianshu.com/p/533b397c63f0-->
-    <!-- Android材料设计工具 https://www.materialpalette.com/icons  -->
+<!--    &lt;!&ndash;  参考文献 &ndash;&gt;-->
+<!--    &lt;!&ndash; 原文 https://medium.com/over-engineering/setting-up-a-material-components-theme-for-android-fbf7774da739&ndash;&gt;-->
+<!--    &lt;!&ndash; 机翻 https://www.jianshu.com/p/533b397c63f0&ndash;&gt;-->
+<!--    &lt;!&ndash; Android材料设计工具 https://www.materialpalette.com/icons  &ndash;&gt;-->
 
-    <!--  //////////////////////////////////主题相关(可配置可新增)//////////////////////////////////////////////////  -->
-    <!-- 白天模式 -->
-    <!-- 主题色  -->
-    <color name="primary">#1A1818</color>
-    <!--  主题色(较暗)  -->
-    <color name="primary_dark">#0E0E0E</color>
-    <!--    &lt;!&ndash;  主题色(较亮)  &ndash;&gt;-->
-    <!--    <color name="primary_light">#262222</color>-->
-    <!--    &lt;!&ndash;  按钮背景颜色  &ndash;&gt;-->
-    <!--    <color name="accent">#009688</color>-->
-    <!--    &lt;!&ndash;  主题文字颜色  &ndash;&gt;-->
-    <!--    <color name="primary_text">#212121</color>-->
-    <!--    &lt;!&ndash;  二级主题文字颜色  &ndash;&gt;-->
-    <!--    <color name="secondary_text">#757575</color>-->
-    <!--    &lt;!&ndash;  小图标颜色  &ndash;&gt;-->
-    <!--    <color name="icons">#FFFFFF</color>-->
-    <!--    &lt;!&ndash;  横线颜色  &ndash;&gt;-->
-    <!--    <color name="divider">#BDBDBD</color>-->
-    <!--    &lt;!&ndash;  背景色 &ndash;&gt;-->
-    <!--    <color name="background">#d8d8d8</color>-->
+<!--    &lt;!&ndash;  //////////////////////////////////主题相关(可配置可新增)//////////////////////////////////////////////////  &ndash;&gt;-->
+<!--    &lt;!&ndash; 白天模式 &ndash;&gt;-->
+<!--    &lt;!&ndash; 主题色  &ndash;&gt;-->
+<!--    <color name="primary">#1A1818</color>-->
+<!--    &lt;!&ndash;  主题色(较暗)  &ndash;&gt;-->
+<!--    <color name="primary_dark">#0E0E0E</color>-->
+<!--    &lt;!&ndash;    &lt;!&ndash;  主题色(较亮)  &ndash;&gt;&ndash;&gt;-->
+<!--    &lt;!&ndash;    <color name="primary_light">#262222</color>&ndash;&gt;-->
+<!--    &lt;!&ndash;    &lt;!&ndash;  按钮背景颜色  &ndash;&gt;&ndash;&gt;-->
+<!--    &lt;!&ndash;    <color name="accent">#009688</color>&ndash;&gt;-->
+<!--    &lt;!&ndash;    &lt;!&ndash;  主题文字颜色  &ndash;&gt;&ndash;&gt;-->
+<!--    &lt;!&ndash;    <color name="primary_text">#212121</color>&ndash;&gt;-->
+<!--    &lt;!&ndash;    &lt;!&ndash;  二级主题文字颜色  &ndash;&gt;&ndash;&gt;-->
+<!--    &lt;!&ndash;    <color name="secondary_text">#757575</color>&ndash;&gt;-->
+<!--    &lt;!&ndash;    &lt;!&ndash;  小图标颜色  &ndash;&gt;&ndash;&gt;-->
+<!--    &lt;!&ndash;    <color name="icons">#FFFFFF</color>&ndash;&gt;-->
+<!--    &lt;!&ndash;    &lt;!&ndash;  横线颜色  &ndash;&gt;&ndash;&gt;-->
+<!--    &lt;!&ndash;    <color name="divider">#BDBDBD</color>&ndash;&gt;-->
+<!--    &lt;!&ndash;    &lt;!&ndash;  背景色 &ndash;&gt;&ndash;&gt;-->
+<!--    &lt;!&ndash;    <color name="background">#d8d8d8</color>&ndash;&gt;-->
 
 
 </resources>

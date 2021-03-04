@@ -74,10 +74,13 @@ dependencies {
     api rootProject.ext.dependencies["retrofit-url-manager"]
     //retrofit
     api rootProject.ext.dependencies["retrofit"]
+    api rootProject.ext.dependencies["okhttp3"]
+    //解析库
     api rootProject.ext.dependencies["converter-gson"]
-    api rootProject.ext.dependencies["PersistentCookieJar"]
+    //    api rootProject.ext.dependencies["PersistentCookieJar"]
     //日志拦截器
     api rootProject.ext.dependencies["logging-interceptor"]
+
     //多媒体相关
     //图片加载  https://www.fresco-cn.org/docs/getting-started.html
     api rootProject.ext.dependencies["fresco"]
@@ -125,7 +128,6 @@ dependencies {
     //简易通用popwindow https://github.com/pinguo-zhouwei/CustomPopwindow
     api rootProject.ext.dependencies["CustomPopwindow"]
 
-
     //h5相关 https://github.com/Justson/AgentWeb
     api rootProject.ext.dependencies["agentweb"]
     api rootProject.ext.dependencies["filechooser"]
@@ -138,6 +140,7 @@ dependencies {
 
     //状态栏管理
     api rootProject.ext.dependencies["immersionbar"]
+    api rootProject.ext.dependencies["immersionbar-components"]
     api rootProject.ext.dependencies["immersionbar-ktx"]
 
 }

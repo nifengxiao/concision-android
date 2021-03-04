@@ -15,6 +15,7 @@ import com.creator.concisiondemo.R
 import com.creator.concisiondemo.data.isInit
 import com.creator.config.app.base.BaseActivity
 import com.creator.concisiondemo.databinding.ActivityMainBinding
+import com.gyf.immersionbar.ImmersionBar
 
 /**
  * @CreateDate:     2021/2/7

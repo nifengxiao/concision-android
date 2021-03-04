@@ -9,7 +9,9 @@ import com.creator.concisiondemo.ui.MainViewModel
 import com.creator.concisiondemo.utils.initMain
 import com.creator.config.utils.init
 import com.creator.config.utils.interceptLongClick
+import com.gyf.immersionbar.ImmersionBar
 import kotlinx.android.synthetic.main.fragment_main.*
+import kotlinx.android.synthetic.main.include_toolbar.*
 
 /**
  * @CreateDate:     2021/2/20
@@ -25,7 +27,12 @@ class MainFragment: BaseFragment<MainViewModel, FragmentMainBinding>(){
 
     override fun initView(savedInstanceState: Bundle?) {
         LogUtils.i("GuideFragment进入耗时"+System.currentTimeMillis())
-
+        //首页进入全屏模式
+//        ImmersionBar
+//            .with(this)
+//            .navigationBarEnable(false)
+//            .statusBarDarkFont(true)
+//            .init()
         //初始化viewpager2
         mainViewpager.initMain(this)
 
@@ -40,6 +47,10 @@ class MainFragment: BaseFragment<MainViewModel, FragmentMainBinding>(){
 
         //禁止长按出现Toast
         nav_view.interceptLongClick(R.id.navigation_home,R.id.navigation_dashboard,R.id.navigation_notifications)
+    }
+
+    override fun isVisibleStatusBar(): Boolean {
+        return false
     }
 
 }

@@ -1,40 +1,25 @@
 package com.creator.concisiondemo.ui.adapter
 
 import com.chad.library.adapter.base.BaseQuickAdapter
-import com.chad.library.adapter.base.viewholder.BaseViewHolder
-import com.creator.concision.ext.util.toHtml
+import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
 import com.creator.concisiondemo.R
 import com.creator.concisiondemo.data.model.bean.ArticleBean
+import com.creator.concisiondemo.databinding.RcItemAriticleBinding
 
 /**
  * @CreateDate:     2021/2/23
  * @Author:         Creator
  * @Description:    文章适配器
+ * 参考 https://github.com/CymChad/BaseRecyclerViewAdapterHelper/blob/master/app/src/main/java/com/chad/baserecyclerviewadapterhelper/adapter/DataBindingAdapter.java
  */
-class ArticleAdapter : BaseQuickAdapter<ArticleBean, BaseViewHolder>(R.layout.rc_item_ariticle) {
+class ArticleAdapter :
+    BaseQuickAdapter<ArticleBean, BaseDataBindingHolder<RcItemAriticleBinding>>(R.layout.rc_item_ariticle) {
 
-    override fun convert(holder: BaseViewHolder, item: ArticleBean) {
-
-
-        //文章布局的赋值
-        item.run {
-            holder.setText(
-                R.id.item_home_author,
-                if (author.isNotEmpty()) author else shareUser
-            )
-            holder.setText(R.id.item_home_content, title)
-            holder.setText(R.id.item_home_type2, "$superChapterName·$chapterName")
-            holder.setText(R.id.item_home_date, niceDate)
-            //展示标签
-            holder.setGone(R.id.item_home_new, !fresh)
-            holder.setGone(R.id.item_home_top, type != 1)
-            if (tags.isNotEmpty()) {
-                holder.setGone(R.id.item_home_type1, false)
-                holder.setText(R.id.item_home_type1, tags[0].name)
-            } else {
-                holder.setGone(R.id.item_home_type1, true)
-            }
-        }
+    override fun convert(holder: BaseDataBindingHolder<RcItemAriticleBinding>, item: ArticleBean) {
+        //基础用法
+        val binding = holder.dataBinding
+        binding?.articleBean = item
+        binding?.executePendingBindings()
     }
 
 }

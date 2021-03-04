@@ -20,4 +20,6 @@ class LoginFragment: BaseFragment<LoginViewModel, FragmentGuideBinding>(){
 
     }
 
+
+
 }

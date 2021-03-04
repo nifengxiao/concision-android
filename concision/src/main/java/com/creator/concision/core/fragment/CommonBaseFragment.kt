@@ -1,11 +1,15 @@
 package com.creator.concision.core.fragment
 
 import android.content.Context
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toolbar
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
@@ -13,10 +17,12 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import com.creator.concision.R
 import com.creator.concision.core.app.AppContentProvider
+import com.creator.concision.core.app.appContext
 import com.creator.concision.core.viewmodel.BaseViewModel
 import com.creator.concision.ext.getVmClass
 import com.creator.concision.network.manager.NetState
 import com.creator.concision.network.manager.NetworkStateManager
+import com.gyf.immersionbar.ImmersionBar
 
 /**
  * @CreateDate: 2021/1/11
@@ -63,6 +69,34 @@ abstract class CommonBaseFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fr
         createObserver()
         registerDefUIChange()
         initData()
+        initStatusBar()
+    }
+
+    /**
+     * 初始化状态栏
+     */
+    private fun initStatusBar() {
+        if (isVisibleStatusBar()) {
+            ImmersionBar
+                .with(this)
+                .titleBar(mDatabind.root.findViewById<View>(R.id.toolbar))
+                .navigationBarEnable(false)
+                .init()
+        } else {
+            ImmersionBar
+                .with(this)
+                .navigationBarEnable(false)
+//                .statusBarDarkFont(true)
+                .init()
+        }
+    }
+
+
+    /**
+     * 设置是否显示状态栏
+     */
+    open fun isVisibleStatusBar(): Boolean {
+        return true
     }
 
     /**

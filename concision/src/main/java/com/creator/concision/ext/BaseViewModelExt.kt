@@ -8,6 +8,7 @@ import com.creator.concision.core.fragment.CommonBaseFragment
 import kotlinx.coroutines.*
 import com.creator.concision.core.viewmodel.BaseViewModel
 import com.creator.concision.ext.util.getResString
+import com.creator.concision.ext.util.logd
 import com.creator.concision.ext.util.loge
 import com.creator.concision.network.AppException
 import com.creator.concision.network.BaseResponse
@@ -180,6 +181,8 @@ fun <T> BaseViewModel.request(
             it.message?.loge()
             //失败回调
             error(ExceptionHandle.handleException(it))
+            //
+            "Failure$it".logd()
         }
     }
 }

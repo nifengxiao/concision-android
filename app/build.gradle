@@ -9,6 +9,7 @@ apply plugin: 'kotlin-android'
 android {
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]
     buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+    useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
         applicationId "com.example.concisiondemo"
@@ -52,7 +53,7 @@ android {
             buildConfigField "boolean", "IS_BUILD_MODULE", "${isBuildModule}"
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            multiDexKeepProguard file('multidex-config.pro')
+            multiDexKeepProguard file('proguard-rules.pro')
             signingConfig signingConfigs.release
         }
 

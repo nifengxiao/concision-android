@@ -8,36 +8,26 @@
     </data>
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/mainViewpager"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:id="@+id/mainViewpager"
-            />
-
-<!--        <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--            android:id="@+id/nav_view"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:background="?android:attr/windowBackground"-->
-<!--            android:theme="@style/Theme.ConcisionDemo"-->
-<!--            app:menu="@menu/bottom_nav_menu" />-->
+            android:layout_weight="1" />
 
         <com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
             android:id="@+id/nav_view"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@color/white"
-            app:menu="@menu/bottom_nav_menu"
-            app:itemIconTint="@color/selector_item_color"
-            app:itemTextColor="@color/selector_item_color"
             android:theme="@style/Theme.ConcisionDemo"
             app:itemIconSize="20dp"
-            />
+            app:itemIconTint="@color/selector_item_color"
+            app:itemTextColor="@color/selector_item_color"
+            app:menu="@menu/bottom_nav_menu" />
 
     </LinearLayout>
 

@@ -41,7 +41,6 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
     override fun initView(savedInstanceState: Bundle?) {
 //        val appBarConfiguration = AppBarConfiguration(nav().graph)
 //        toolbar.setupWithNavController(nav(), appBarConfiguration)
-        showMessage("你好")
 
         //初始化状态页
         loadSirInit(refresh, onReloadListener = Callback.OnReloadListener {
