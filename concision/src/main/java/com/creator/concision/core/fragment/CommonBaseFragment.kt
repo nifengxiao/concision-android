@@ -1,23 +1,18 @@
 package com.creator.concision.core.fragment
 
 import android.content.Context
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toolbar
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import com.creator.concision.R
-import com.creator.concision.core.app.AppContentProvider
-import com.creator.concision.core.app.appContext
+import com.creator.concision.core.app.AppInitializer.Companion.app
 import com.creator.concision.core.viewmodel.BaseViewModel
 import com.creator.concision.ext.getVmClass
 import com.creator.concision.network.manager.NetState
@@ -81,12 +76,13 @@ abstract class CommonBaseFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fr
                 .with(this)
                 .titleBar(mDatabind.root.findViewById<View>(R.id.toolbar))
                 .navigationBarEnable(false)
+                .statusBarDarkFont(true)
                 .init()
         } else {
             ImmersionBar
                 .with(this)
                 .navigationBarEnable(false)
-//                .statusBarDarkFont(true)
+                .statusBarDarkFont(true)
                 .init()
         }
     }
@@ -158,7 +154,7 @@ abstract class CommonBaseFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fr
      */
     open fun initData() {}
 
-    abstract fun showLoading(message: String = AppContentProvider.app.getString(R.string.def_loading_message))
+    abstract fun showLoading(message: String = app.getString(R.string.def_loading_message))
 
     abstract fun dismissLoading()
 

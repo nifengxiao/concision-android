@@ -34,10 +34,7 @@ class App : BaseApp() {
     override fun onCreate() {
         super.onCreate()
         //分包
-//        MultiDex.install(this)
         instance = this
-        //初始化基本配置
-        AppPreHelper.setting = SettingBean()
         //界面加载管理 初始化
         LoadSir.beginBuilder()
             .addCallback(LoadingCallback())//加载

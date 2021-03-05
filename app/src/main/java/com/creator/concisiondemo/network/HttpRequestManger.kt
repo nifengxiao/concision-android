@@ -3,7 +3,6 @@ package com.creator.concisiondemo.network
 import com.creator.config.data.model.base.BaseApiBean
 import com.creator.config.data.model.base.BaseListBean
 import com.creator.concisiondemo.data.model.bean.ArticleBean
-import com.creator.concisiondemo.network.service.ArticleApiService
 import com.creator.concisiondemo.network.service.articleApiService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async

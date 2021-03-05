@@ -10,7 +10,6 @@ import com.creator.concision.core.app.appContext
 import com.creator.concision.core.viewmodel.BaseViewModel
 import com.creator.concision.ext.getVmClass
 import com.creator.concision.network.manager.NetState
-import com.creator.concision.network.manager.NetworkStateManager
 
 /**
  * @CreateDate: 2021/1/11
@@ -38,10 +37,6 @@ abstract class CommonBaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : Ap
         registerUiChange()
         initView(savedInstanceState)
         createObserver()
-        //监听网络状态
-        NetworkStateManager.instance.mNetworkStateCallback.observeInActivity(this) {
-            onNetworkStateChanged(it)
-        }
     }
 
     /**

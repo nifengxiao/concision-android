@@ -8,7 +8,6 @@ import com.creator.concisiondemo.R
 import com.creator.config.app.base.BaseFragment
 import com.creator.config.app.sp.AppPreHelper
 import com.creator.concisiondemo.databinding.FragmentGuideBinding
-import kotlinx.android.synthetic.main.fragment_guide.*
 
 /**
  * @CreateDate:     2021/2/20
@@ -23,11 +22,16 @@ class GuideFragment: BaseFragment<GuideViewModel, FragmentGuideBinding>(){
 
     override fun initView(savedInstanceState: Bundle?) {
         LogUtils.i("GuideFragment进入耗时"+System.currentTimeMillis())
-        tv_skip.setOnClickListener {
+        mDatabind.click = ProxyClick()
+    }
+
+    inner class ProxyClick {
+        fun actionGuideToMain(){
             AppPreHelper.isOpenGuide = true
             LogUtils.i("SettingBean", AppPreHelper.setting)
             nav().navigateAction(R.id.action_guide_main)
         }
-    }
 
+
+    }
 }

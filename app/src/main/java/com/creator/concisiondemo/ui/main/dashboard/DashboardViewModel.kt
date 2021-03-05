@@ -1,8 +1,7 @@
 package com.creator.concisiondemo.ui.main.dashboard
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import com.creator.concision.core.viewmodel.BaseViewModel
+import com.creator.concision.util.def.databind.StringObservableField
 
 /**
  * @CreateDate:     2021/2/23
@@ -11,8 +10,5 @@ import com.creator.concision.core.viewmodel.BaseViewModel
  */
 class DashboardViewModel : BaseViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is dashboard Fragment"
-    }
-    val text: LiveData<String> = _text
+    var text = StringObservableField("初始值")
 }

@@ -7,6 +7,7 @@ import com.creator.config.utils.dismissLoadingExt
 import com.creator.concision.ext.getAppViewModel
 import com.creator.config.utils.showLoadingExt
 import com.creator.config.app.event.AppViewModel
+import com.creator.config.app.event.EventViewModel
 import com.creator.config.utils.showEmpty
 import com.creator.config.utils.showError
 import com.creator.config.utils.showLoading
@@ -26,11 +27,11 @@ abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding> :
     //Application全局的ViewModel，里面存放了一些账户信息，基本配置信息等
     val appViewModel: AppViewModel by lazy { getAppViewModel<AppViewModel>() }
 
+    //Application全局的ViewModel，用于发送全局通知操作
+    val eventViewModel: EventViewModel by lazy { getAppViewModel<EventViewModel>() }
+
     //状态页
     lateinit var loadSir: LoadService<Any>
-
-//    //Application全局的ViewModel，用于发送全局通知操作
-//    val eventViewModel: EventViewModel by lazy { getAppViewModel<EventViewModel>() }
 
     /**
      * 懒加载 只有当前fragment视图显示时才会触发该方法
@@ -102,7 +103,6 @@ abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding> :
     protected fun loadSirEmpty() {
         loadSir.showEmpty()
     }
-
 
 //    override fun onPause() {
 //        super.onPause()

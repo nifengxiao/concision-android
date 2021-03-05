@@ -16,10 +16,10 @@ class ArticleAdapter :
     BaseQuickAdapter<ArticleBean, BaseDataBindingHolder<RcItemAriticleBinding>>(R.layout.rc_item_ariticle) {
 
     override fun convert(holder: BaseDataBindingHolder<RcItemAriticleBinding>, item: ArticleBean) {
-        //基础用法
         val binding = holder.dataBinding
         binding?.articleBean = item
         binding?.executePendingBindings()
     }
+
 
 }

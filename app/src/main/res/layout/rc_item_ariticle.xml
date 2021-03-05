@@ -41,7 +41,7 @@
                     android:id="@+id/item_home_author"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{articleBean.author.length()>0 ? articleBean.author:articleBean.shareUser}"
+                    android:text="@{articleBean.showAuthor()}"
                     android:textColor="@color/secondary_text"
                     android:textSize="13sp"
                     tools:text="有何高见" />

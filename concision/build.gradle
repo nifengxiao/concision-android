@@ -143,4 +143,10 @@ dependencies {
     api rootProject.ext.dependencies["immersionbar-components"]
     api rootProject.ext.dependencies["immersionbar-ktx"]
 
+
+    //启动优化
+    api rootProject.ext.dependencies["startup"]
+
+    //mmkv
+    api rootProject.ext.dependencies["mmkv"]
 }

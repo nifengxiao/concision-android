@@ -2,6 +2,7 @@ package com.creator.concisiondemo.data.model.bean
 
 import android.annotation.SuppressLint
 import android.os.Parcelable
+import com.blankj.utilcode.util.StringUtils
 import kotlinx.android.parcel.Parcelize
 
 /**
@@ -36,4 +37,19 @@ data class ArticleBean(
     var type: Int,
     var userId: Int,
     var visible: Int,
-    var zan: Int) : Parcelable
+    var zan: Int
+) : Parcelable {
+
+    /**
+     * 用于显示的作者
+     */
+    fun showAuthor(): String {
+        return if (StringUtils.isEmpty(author)) {
+            author
+        } else {
+            shareUser
+        }
+    }
+
+
+}
