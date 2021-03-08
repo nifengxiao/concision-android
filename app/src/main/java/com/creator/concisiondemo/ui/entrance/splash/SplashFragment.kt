@@ -39,7 +39,7 @@ class SplashFragment : BaseFragment<SplashViewModel, FragmentSplashBinding>() {
         isInit = true
 
         if (AppPreHelper.isOpenGuide) {
-            nav().navigateAction(R.id.action_splash_to_main)
+            nav().navigateAction(R.id.action_splash_to_menu)
         } else {
             nav().navigateAction(R.id.action_splash_to_guide)
         }

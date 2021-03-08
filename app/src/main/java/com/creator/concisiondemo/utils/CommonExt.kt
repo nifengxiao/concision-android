@@ -5,7 +5,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.creator.concisiondemo.ui.main.dashboard.DashboardFragment
 import com.creator.concisiondemo.ui.main.home.HomeFragment
-import com.creator.concisiondemo.ui.main.notifications.NotificationsFragment
+import com.creator.concisiondemo.ui.main.event.EventFragment
 
 /**
  * @CreateDate:     2021/2/23
@@ -33,7 +33,7 @@ fun ViewPager2.initMain(fragment: Fragment): ViewPager2 {
                     DashboardFragment()
                 }
                 2 -> {
-                    NotificationsFragment()
+                    EventFragment()
                 }
                 else -> {
                     HomeFragment()

@@ -1,20 +1,16 @@
 package com.creator.config.network
 
-import android.util.Log
 import com.creator.concision.core.app.appContext
 import com.creator.concision.network.BaseNetworkApi
 import com.creator.concision.network.interceptor.CacheInterceptor
-
+import com.creator.concision.network.interceptor.log.HttpLogger
 import com.google.gson.GsonBuilder
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.File
-import java.io.UnsupportedEncodingException
-import java.net.URLDecoder
 import java.util.concurrent.TimeUnit
 
 
@@ -45,19 +41,10 @@ class NetworkApi : BaseNetworkApi() {
             //添加缓存拦截器 可传入缓存天数，不传默认7天
             addInterceptor(CacheInterceptor())
             // 日志拦截器
-            val interceptor =
-                HttpLoggingInterceptor(HttpLoggingInterceptor.Logger { message ->
-                    try {
-                        val text: String = URLDecoder.decode(message, "utf-8")
-                        Log.e("OKHttp-----", text)
-                    } catch (e: UnsupportedEncodingException) {
-                        e.printStackTrace()
-                        Log.e("OKHttp-----", message)
-                    }
-                })
-            addInterceptor(interceptor)
-//            这行必须加 不然默认不打印
-            interceptor.level = HttpLoggingInterceptor.Level.BODY;
+            val logInterceptor = HttpLoggingInterceptor(HttpLogger())
+            addInterceptor(logInterceptor)
+            //这行必须加 不然默认不打印
+            logInterceptor.level = HttpLoggingInterceptor.Level.BODY;
             //超时时间 连接、读、写
             connectTimeout(10, TimeUnit.SECONDS)
             readTimeout(5, TimeUnit.SECONDS)

@@ -12,18 +12,18 @@ class DashboardFragment : BaseFragment<DashboardViewModel, FragmentDashboardBind
     }
 
     override fun initView(savedInstanceState: Bundle?) {
-//        eventViewModel.test.observeInFragment(
-//            this
-//        ) { t ->
-//            mViewModel.text.value = t
-//        }
         mDatabind.vm = mViewModel
-        mViewModel.text.set("123123214")
+        mViewModel.text.set("Dashboard")
         eventViewModel.test.observe(viewLifecycleOwner,
             Observer<String> { t ->
                 mViewModel.text.set(t)
                 mViewModel.text.notifyChange()
             })
+    }
+
+
+    override fun openDefaultImmersionBar(): Boolean {
+        return false
     }
 
 }

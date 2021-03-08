@@ -6,16 +6,16 @@
     <data>
         <variable
             name="click"
-            type="com.creator.concisiondemo.ui.main.notifications.NotificationsFragment.ProxyClick" />
+            type="com.creator.concisiondemo.ui.main.event.EventFragment.ProxyClick" />
         <variable
             name="vm"
-            type="com.creator.concisiondemo.ui.main.notifications.NotificationsViewModel" />
+            type="com.creator.concisiondemo.ui.main.event.EventViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.main.notifications.NotificationsFragment">
+        tools:context=".ui.main.event.EventFragment">
 
         <TextView
             android:id="@+id/text_notifications"

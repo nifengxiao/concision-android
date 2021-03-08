@@ -15,7 +15,6 @@ import com.creator.concisiondemo.R
 import com.creator.concisiondemo.data.isInit
 import com.creator.config.app.base.BaseActivity
 import com.creator.concisiondemo.databinding.ActivityMainBinding
-import com.gyf.immersionbar.ImmersionBar
 
 /**
  * @CreateDate:     2021/2/7
@@ -72,7 +71,7 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
     private fun exitApp() {
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                if (nav.currentDestination != null && nav.currentDestination!!.id != R.id.main_fragment) {
+                if (nav.currentDestination != null && nav.currentDestination!!.id != R.id.menu_fragment) {
                     //如果当前界面不是主页，那么直接调用返回即可
                     nav.navigateUp()
                 } else {

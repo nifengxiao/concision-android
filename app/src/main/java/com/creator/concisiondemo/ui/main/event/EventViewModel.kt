@@ -1,4 +1,4 @@
-package com.creator.concisiondemo.ui.main.notifications
+package com.creator.concisiondemo.ui.main.event
 
 import com.creator.concision.core.viewmodel.BaseViewModel
 import com.creator.concision.util.def.databind.StringObservableField
@@ -8,7 +8,7 @@ import com.creator.concision.util.def.databind.StringObservableField
  * @Author:         YuanFeng
  * @Description:
  */
-class NotificationsViewModel : BaseViewModel() {
+class EventViewModel : BaseViewModel() {
 
     var text = StringObservableField("点击改变值")
 }

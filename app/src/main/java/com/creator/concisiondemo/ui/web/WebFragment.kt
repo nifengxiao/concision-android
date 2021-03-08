@@ -33,11 +33,6 @@ class WebFragment : BaseFragment<WebViewModel, FragmentGuideBinding>() {
     }
 
     override fun initView(savedInstanceState: Bundle?) {
-//        ImmersionBar
-//            .with(this)
-//            .titleBar(toolbar)
-//            .statusBarDarkFont(true)
-//            .init()
         initTitle()
         initWeb()
     }

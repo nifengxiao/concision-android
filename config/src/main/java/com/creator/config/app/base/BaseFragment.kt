@@ -1,16 +1,15 @@
 package com.creator.config.app.base
 
+import androidx.appcompat.widget.Toolbar
 import androidx.databinding.ViewDataBinding
 import com.creator.concision.core.fragment.CommonBaseFragment
 import com.creator.concision.core.viewmodel.BaseViewModel
-import com.creator.config.utils.dismissLoadingExt
 import com.creator.concision.ext.getAppViewModel
-import com.creator.config.utils.showLoadingExt
 import com.creator.config.app.event.AppViewModel
 import com.creator.config.app.event.EventViewModel
-import com.creator.config.utils.showEmpty
-import com.creator.config.utils.showError
-import com.creator.config.utils.showLoading
+import com.creator.config.utils.*
+import com.example.config.R
+import com.gyf.immersionbar.ImmersionBar
 import com.kingja.loadsir.callback.Callback
 import com.kingja.loadsir.core.LoadService
 import com.kingja.loadsir.core.LoadSir
@@ -22,7 +21,8 @@ import com.kingja.loadsir.core.LoadSir
  * @Description:    你项目中的Fragment基类，在这里实现显示弹窗，吐司，还有自己的需求操作
  */
 abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding> :
-        CommonBaseFragment<VM, DB>() {
+    CommonBaseFragment<VM, DB> {
+
 
     //Application全局的ViewModel，里面存放了一些账户信息，基本配置信息等
     val appViewModel: AppViewModel by lazy { getAppViewModel<AppViewModel>() }
@@ -32,6 +32,8 @@ abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding> :
 
     //状态页
     lateinit var loadSir: LoadService<Any>
+
+    constructor() : super()
 
     /**
      * 懒加载 只有当前fragment视图显示时才会触发该方法
@@ -47,7 +49,6 @@ abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding> :
      * Fragment执行onViewCreated后触发
      */
     override fun initData() {
-
     }
 
     /**
@@ -104,8 +105,30 @@ abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding> :
         loadSir.showEmpty()
     }
 
-//    override fun onPause() {
-//        super.onPause()
-//        hideSoftKeyboard(activity)
-//    }
+
+    /**
+     * 初始化状态栏
+     * tips:
+     * 1.初始是有状态栏就显示状态栏，没有标题栏默认上移
+     * 2.可以通过
+     */
+    override fun initStatusBar() {
+        if (!openDefaultImmersionBar()){
+            return
+        }
+        val view = view?.findViewById<Toolbar>(R.id.toolbar)
+        ImmersionBar
+            .with(this)
+            .navigationBarEnable(false)
+            .titleBar(view)
+            .statusBarDarkFont(true)
+            .init()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        ImmersionBar.destroy(this)
+    }
+
+
 }

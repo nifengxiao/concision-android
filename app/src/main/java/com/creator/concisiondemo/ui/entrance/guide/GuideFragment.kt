@@ -29,7 +29,7 @@ class GuideFragment: BaseFragment<GuideViewModel, FragmentGuideBinding>(){
         fun actionGuideToMain(){
             AppPreHelper.isOpenGuide = true
             LogUtils.i("SettingBean", AppPreHelper.setting)
-            nav().navigateAction(R.id.action_guide_main)
+            nav().navigateAction(R.id.action_guide_menu)
         }
 
 

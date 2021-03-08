@@ -27,30 +27,22 @@ class MainFragment: BaseFragment<MainViewModel, FragmentMainBinding>(){
 
     override fun initView(savedInstanceState: Bundle?) {
         LogUtils.i("GuideFragment进入耗时"+System.currentTimeMillis())
-        //首页进入全屏模式
-//        ImmersionBar
-//            .with(this)
-//            .navigationBarEnable(false)
-//            .statusBarDarkFont(true)
-//            .init()
         //初始化viewpager2
         mainViewpager.initMain(this)
-
         //初始化 bottomBar
         nav_view.init{
             when (it) {
                 R.id.navigation_home -> mainViewpager.setCurrentItem(0, false)
                 R.id.navigation_dashboard -> mainViewpager.setCurrentItem(1, false)
-                R.id.navigation_notifications -> mainViewpager.setCurrentItem(2, false)
+                R.id.navigation_event -> mainViewpager.setCurrentItem(2, false)
             }
         }
-
         //禁止长按出现Toast
-        nav_view.interceptLongClick(R.id.navigation_home,R.id.navigation_dashboard,R.id.navigation_notifications)
+        nav_view.interceptLongClick(R.id.navigation_home,R.id.navigation_dashboard,R.id.navigation_event)
     }
+
 
     override fun isVisibleStatusBar(): Boolean {
         return false
     }
-
 }

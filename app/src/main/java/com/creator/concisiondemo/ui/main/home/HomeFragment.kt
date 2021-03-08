@@ -18,6 +18,7 @@ import com.creator.concision.weight.recyclerview.SpaceItemDecoration
 import com.creator.concisiondemo.data.model.bean.WebBean
 import com.creator.config.utils.loadListData
 import com.creator.config.utils.showMessage
+import com.gyf.immersionbar.ImmersionBar
 import com.kingja.loadsir.callback.Callback
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -88,5 +89,9 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
                 loadListData(it, articleAdapter, loadSir, rc, refresh)
             })
         }
+    }
+
+    override fun openDefaultImmersionBar(): Boolean {
+        return false
     }
 }

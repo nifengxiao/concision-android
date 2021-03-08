@@ -17,7 +17,6 @@ import com.creator.concision.core.viewmodel.BaseViewModel
 import com.creator.concision.ext.getVmClass
 import com.creator.concision.network.manager.NetState
 import com.creator.concision.network.manager.NetworkStateManager
-import com.gyf.immersionbar.ImmersionBar
 
 /**
  * @CreateDate: 2021/1/11
@@ -28,6 +27,8 @@ abstract class CommonBaseFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fr
 
     //是否第一次加载
     private var isFirst: Boolean = true
+    //是否开启ImmersionBar
+    var isOpenDefaultImmersionBar: Boolean = true
 
     lateinit var mViewModel: VM
 
@@ -37,6 +38,8 @@ abstract class CommonBaseFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fr
      * 当前Fragment绑定的视图布局
      */
     abstract fun layoutId(): Int
+
+    abstract fun initStatusBar()
 
     //该类绑定的ViewDataBinding
     lateinit var mDatabind: DB
@@ -68,32 +71,20 @@ abstract class CommonBaseFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fr
     }
 
     /**
-     * 初始化状态栏
+     * 是否开启ImmersionBar
+     * @return 默认开启
      */
-    private fun initStatusBar() {
-        if (isVisibleStatusBar()) {
-            ImmersionBar
-                .with(this)
-                .titleBar(mDatabind.root.findViewById<View>(R.id.toolbar))
-                .navigationBarEnable(false)
-                .statusBarDarkFont(true)
-                .init()
-        } else {
-            ImmersionBar
-                .with(this)
-                .navigationBarEnable(false)
-                .statusBarDarkFont(true)
-                .init()
-        }
+    open fun openDefaultImmersionBar(): Boolean {
+        return isOpenDefaultImmersionBar
     }
-
 
     /**
-     * 设置是否显示状态栏
+     * 重设ImmersionBar
      */
-    open fun isVisibleStatusBar(): Boolean {
-        return true
+    open fun resetImmersionBar() {
+        isOpenDefaultImmersionBar = false
     }
+
 
     /**
      * 网络变化监听 子类重写
