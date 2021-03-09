@@ -2,11 +2,7 @@ package com.creator.concision.ext.util
 
 import android.content.ClipData
 import android.content.Context
-import androidx.recyclerview.widget.RecyclerView
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.chad.library.adapter.base.BaseQuickAdapter
 import com.creator.concision.R
-import com.kingja.loadsir.core.LoadService
 
 /**
  * @CreateDate:     2021/1/6 17:09

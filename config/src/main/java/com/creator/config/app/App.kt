@@ -53,7 +53,7 @@ class App : BaseApp() {
         }
 
         //全局设置默认的footer
-        SmartRefreshLayout.setDefaultRefreshFooterCreator { context, layout ->
+        SmartRefreshLayout.setDefaultRefreshFooterCreator { context, _ ->
             ClassicsFooter(context)
         }
     }

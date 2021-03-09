@@ -41,7 +41,7 @@ class MenuFragment : BaseFragment<MenuViewModel, FragmentMenuBinding>() {
             MenuBean(getColor(), R.string.menu_room.getResString())
         )
         //点击事件
-        menuAdapter.setOnItemClickListener { adapter, view, position ->
+        menuAdapter.setOnItemClickListener { adapter, _, position ->
             val data = adapter.data[position] as MenuBean
             when (data.title) {
                 R.string.menu_main.getResString() -> {

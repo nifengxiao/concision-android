@@ -3,9 +3,7 @@ package com.creator.concision.core.activity
 import android.app.Activity
 import android.app.Application
 import android.os.Bundle
-import android.widget.Toast
 import com.creator.concision.ext.util.logd
-import com.creator.concision.network.manager.NetworkStateManager
 import com.creator.concision.util.activity.ActivityManger
 
 /**

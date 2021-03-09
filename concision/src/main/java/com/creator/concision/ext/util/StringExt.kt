@@ -1,9 +1,7 @@
 package com.creator.concision.ext.util
 
-import android.os.Build
-import android.text.Html
 import android.text.Spanned
-import androidx.annotation.RequiresApi
+import androidx.core.text.HtmlCompat
 import com.creator.concision.core.app.appContext
 
 /**
@@ -24,12 +22,7 @@ fun Int.getResString() =
 /**
  * 字符串转html
  */
-@RequiresApi(Build.VERSION_CODES.N)
-fun String.toHtml(flag: Int = Html.FROM_HTML_MODE_LEGACY): Spanned {
-    return if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-        Html.fromHtml(this, flag)
-    } else {
-        Html.fromHtml(this)
-    }
+fun String.toHtml(): Spanned {
+    return HtmlCompat.fromHtml(this, HtmlCompat.FROM_HTML_MODE_LEGACY);
 }
 

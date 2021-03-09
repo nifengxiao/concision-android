@@ -64,7 +64,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
         }
 
         //点击事件
-        articleAdapter.setOnItemClickListener { adapter, view, position ->
+        articleAdapter.setOnItemClickListener { adapter, _, position ->
             val articleBean = adapter.data[position] as ArticleBean
             val bundle = Bundle()
             bundle.putParcelable("web", WebBean(articleBean.chapterName, articleBean.link))
@@ -86,7 +86,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
     override fun createObserver() {
         requestHomeViewModel.run {
             articleData.observe(viewLifecycleOwner, Observer {
-                loadListData(it, articleAdapter, loadSir, rc, refresh)
+                loadListData(it, articleAdapter, loadSir, refresh)
             })
         }
     }

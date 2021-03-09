@@ -151,8 +151,7 @@ fun <T> BaseViewModel.request(
     success: (T) -> Unit,
     error: (AppException) -> Unit = {},
     isShowDialog: Boolean = false,
-    loadingMessage: String = R.string.def_loading_message.getResString(),
-    onTokenOut: ((String) -> Unit)? = null
+    loadingMessage: String = R.string.def_loading_message.getResString()
 ): Job {
     //如果需要弹窗 通知Activity/fragment弹窗
     return viewModelScope.launch {

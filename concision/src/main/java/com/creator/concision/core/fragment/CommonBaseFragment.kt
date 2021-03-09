@@ -11,12 +11,11 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
+import com.blankj.utilcode.util.NetworkUtils
 import com.creator.concision.R
 import com.creator.concision.core.app.AppInitializer.Companion.app
 import com.creator.concision.core.viewmodel.BaseViewModel
 import com.creator.concision.ext.getVmClass
-import com.creator.concision.network.manager.NetState
-import com.creator.concision.network.manager.NetworkStateManager
 
 /**
  * @CreateDate: 2021/1/11
@@ -81,7 +80,7 @@ abstract class CommonBaseFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fr
     /**
      * 网络变化监听 子类重写
      */
-    open fun onNetworkStateChanged(netState: NetState) {}
+    open fun onNetworkStateChanged() {}
 
     /**
      * 创建viewModel
@@ -119,14 +118,19 @@ abstract class CommonBaseFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fr
             view?.post {
                 lazyLoadData()
                 //在Fragment中，只有懒加载过了才能开启网络变化监听
-                NetworkStateManager.instance.mNetworkStateCallback.observeInFragment(
-                    this
-                ) {
-                    //不是首次订阅时调用方法，防止数据第一次监听错误
-                    if (!isFirst) {
-                        onNetworkStateChanged(it)
+                NetworkUtils.registerNetworkStatusChangedListener(object :
+                    NetworkUtils.OnNetworkStatusChangedListener {
+                    override fun onConnected(networkType: NetworkUtils.NetworkType) {
+                        //不是首次订阅时调用方法，防止数据第一次监听错误
+                        if (!isFirst) {
+                            onNetworkStateChanged()
+                        }
                     }
-                }
+
+                    override fun onDisconnected() {
+
+                    }
+                })
                 isFirst = false
             }
         }

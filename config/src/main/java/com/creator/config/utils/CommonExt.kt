@@ -27,7 +27,6 @@ fun <T> loadListData(
     data: BaseListBean<T>,
     baseQuickAdapter: BaseQuickAdapter<T, *>,
     loadService: LoadService<*>,
-    recyclerView: RecyclerView,
     refresh: SmartRefreshLayout
 ) {
     refresh.finishLoadMore()

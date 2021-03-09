@@ -152,4 +152,7 @@ dependencies {
 
     //    日志拦截器
     api rootProject.ext.dependencies["logginginterceptor"]
+
+    api 'androidx.core:core:1.5.0-alpha05'
+
 }

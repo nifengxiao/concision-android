@@ -1,20 +1,18 @@
 package com.creator.concisiondemo.ui
 
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.view.WindowManager
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import com.blankj.utilcode.util.NetworkUtils
 import com.blankj.utilcode.util.ToastUtils
-import com.creator.concision.network.manager.NetState
 import com.creator.concisiondemo.R
 import com.creator.concisiondemo.data.isInit
-import com.creator.config.app.base.BaseActivity
 import com.creator.concisiondemo.databinding.ActivityMainBinding
+import com.creator.concisiondemo.utils.closeSplashTheme
+import com.creator.config.app.base.BaseActivity
 
 /**
  * @CreateDate:     2021/2/7
@@ -43,10 +41,7 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
     //用于处理
     private fun initWindow() {
         if (isInit) {
-            //取消全屏
-            window?.clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
-            //更换背景
-            window?.decorView?.background = ColorDrawable(Color.WHITE)
+           closeSplashTheme()
         }
     }
 
@@ -58,7 +53,7 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
      * 防止出现按Home键回到桌面时，再次点击重新进入该界面bug
      */
     private fun fitBackHomeBug(): Boolean {
-        if (intent.flags and Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT !== 0) {
+        if (intent.flags and Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT != 0) {
             finish()
             return true
         }
@@ -88,12 +83,11 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
     }
 
 
-    override fun onNetworkStateChanged(netState: NetState) {
-        super.onNetworkStateChanged(netState)
-        if (!netState.isSuccess) {
-            Toast.makeText(applicationContext, "网络已断开!", Toast.LENGTH_SHORT).show()
-        } else {
+    override fun onNetworkStateChanged() {
+        if (NetworkUtils.isConnected()) {
             Toast.makeText(applicationContext, "网络已连接!", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(applicationContext, "网络已断开!", Toast.LENGTH_SHORT).show()
         }
     }
 

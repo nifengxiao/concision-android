@@ -5,11 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProvider
+import com.blankj.utilcode.util.NetworkUtils
 import com.creator.concision.R
 import com.creator.concision.core.app.appContext
 import com.creator.concision.core.viewmodel.BaseViewModel
 import com.creator.concision.ext.getVmClass
-import com.creator.concision.network.manager.NetState
 
 /**
  * @CreateDate: 2021/1/11
@@ -37,12 +37,26 @@ abstract class CommonBaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : Ap
         registerUiChange()
         initView(savedInstanceState)
         createObserver()
+        networkStatus()
+    }
+
+    private fun networkStatus() {
+        NetworkUtils.registerNetworkStatusChangedListener(object :
+            NetworkUtils.OnNetworkStatusChangedListener {
+            override fun onConnected(networkType: NetworkUtils.NetworkType) {
+                onNetworkStateChanged()
+            }
+
+            override fun onDisconnected() {
+                onNetworkStateChanged()
+            }
+        })
     }
 
     /**
      * 网络变化监听
      */
-    open fun onNetworkStateChanged(netState: NetState) {}
+    open fun onNetworkStateChanged() {}
 
     /**
      * 创建viewModel
