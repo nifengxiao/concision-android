@@ -78,8 +78,8 @@ dependencies {
     //解析库
     api rootProject.ext.dependencies["converter-gson"]
     //    api rootProject.ext.dependencies["PersistentCookieJar"]
-    //日志拦截器
-    api rootProject.ext.dependencies["logging-interceptor"]
+//    //日志拦截器
+//    api rootProject.ext.dependencies["logging-interceptor"]
 
     //多媒体相关
     //图片加载  https://www.fresco-cn.org/docs/getting-started.html
@@ -149,4 +149,7 @@ dependencies {
 
     //mmkv
     api rootProject.ext.dependencies["mmkv"]
+
+    //    日志拦截器
+    api rootProject.ext.dependencies["logginginterceptor"]
 }

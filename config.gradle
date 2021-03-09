@@ -136,7 +136,10 @@ ext {
             "startup"                      : "androidx.startup:startup-runtime:1.0.0",
 
             //sp代替解决方案
-            "mmkv"                             : "com.tencent:mmkv-static:1.2.7"
+            "mmkv"                         : "com.tencent:mmkv-static:1.2.7",
+
+            //日志拦截器
+            "logginginterceptor"           : "com.safframework.log:saf-logginginterceptor:1.4.9"
     ]
 
 

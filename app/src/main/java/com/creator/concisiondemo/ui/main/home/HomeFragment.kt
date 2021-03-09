@@ -86,7 +86,6 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
     override fun createObserver() {
         requestHomeViewModel.run {
             articleData.observe(viewLifecycleOwner, Observer {
-                LogUtils.i("baseListBean$it")
                 loadListData(it, articleAdapter, loadSir, rc, refresh)
             })
         }

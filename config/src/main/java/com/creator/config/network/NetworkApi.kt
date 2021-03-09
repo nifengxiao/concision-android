@@ -3,11 +3,10 @@ package com.creator.config.network
 import com.creator.concision.core.app.appContext
 import com.creator.concision.network.BaseNetworkApi
 import com.creator.concision.network.interceptor.CacheInterceptor
-import com.creator.concision.network.interceptor.log.HttpLogger
 import com.google.gson.GsonBuilder
+import com.safframework.http.interceptor.LoggingInterceptor
 import okhttp3.Cache
 import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.File
@@ -40,11 +39,17 @@ class NetworkApi : BaseNetworkApi() {
             addInterceptor(MyHeadInterceptor())
             //添加缓存拦截器 可传入缓存天数，不传默认7天
             addInterceptor(CacheInterceptor())
-            // 日志拦截器
-            val logInterceptor = HttpLoggingInterceptor(HttpLogger())
-            addInterceptor(logInterceptor)
-            //这行必须加 不然默认不打印
-            logInterceptor.level = HttpLoggingInterceptor.Level.BODY;
+            val loggingInterceptor = LoggingInterceptor.Builder()
+                .loggable(true) // TODO: 发布到生产环境需要改成false
+                .request()
+                .requestTag("Request")
+                .response()
+                .responseTag("Response")
+                .hideVerticalLine()// 隐藏竖线边框
+                .build();
+
+            //设置拦截器
+            addInterceptor(loggingInterceptor)
             //超时时间 连接、读、写
             connectTimeout(10, TimeUnit.SECONDS)
             readTimeout(5, TimeUnit.SECONDS)
