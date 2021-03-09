@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.lifecycle.Observer
 import com.creator.concisiondemo.R
 import com.creator.concisiondemo.databinding.FragmentEventBinding
+import com.creator.concisiondemo.utils.openStatusBar
 import com.creator.config.app.base.BaseFragment
 
 class EventFragment : BaseFragment<EventViewModel, FragmentEventBinding>() {
@@ -22,14 +23,9 @@ class EventFragment : BaseFragment<EventViewModel, FragmentEventBinding>() {
             })
     }
 
-    override fun openDefaultImmersionBar(): Boolean {
-        return false
-    }
-
     inner class ProxyClick {
         fun change() {
             eventViewModel.test.value = "我已更改"
         }
     }
-
 }

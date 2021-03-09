@@ -22,8 +22,5 @@ class DashboardFragment : BaseFragment<DashboardViewModel, FragmentDashboardBind
     }
 
 
-    override fun openDefaultImmersionBar(): Boolean {
-        return false
-    }
 
 }

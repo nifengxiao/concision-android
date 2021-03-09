@@ -109,8 +109,7 @@ abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding> :
     /**
      * 初始化状态栏
      * tips:
-     * 1.初始是有状态栏就显示状态栏，没有标题栏默认上移
-     * 2.可以通过
+     * 初始是有状态栏就显示状态栏，没有标题栏默认上移
      */
     override fun initStatusBar() {
         if (!openDefaultImmersionBar()){

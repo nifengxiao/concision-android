@@ -16,6 +16,7 @@ import com.creator.config.utils.showLoading
 import com.creator.concisiondemo.viewmodel.request.RequestHomeViewModel
 import com.creator.concision.weight.recyclerview.SpaceItemDecoration
 import com.creator.concisiondemo.data.model.bean.WebBean
+import com.creator.concisiondemo.utils.openStatusBar
 import com.creator.config.utils.loadListData
 import com.creator.config.utils.showMessage
 import com.gyf.immersionbar.ImmersionBar
@@ -64,9 +65,9 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
 
         //点击事件
         articleAdapter.setOnItemClickListener { adapter, view, position ->
-            val articleBean= adapter.data[position] as ArticleBean
+            val articleBean = adapter.data[position] as ArticleBean
             val bundle = Bundle()
-            bundle.putParcelable("web", WebBean(articleBean.chapterName,articleBean.link))
+            bundle.putParcelable("web", WebBean(articleBean.chapterName, articleBean.link))
             nav().navigateAction(R.id.action_to_web, bundle)
         }
     }
@@ -92,6 +93,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
     }
 
     override fun openDefaultImmersionBar(): Boolean {
+        this.openStatusBar(refresh)
         return false
     }
 }

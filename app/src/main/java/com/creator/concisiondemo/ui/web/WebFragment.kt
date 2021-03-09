@@ -37,10 +37,6 @@ class WebFragment : BaseFragment<WebViewModel, FragmentGuideBinding>() {
         initWeb()
     }
 
-    override fun isVisibleStatusBar(): Boolean {
-        return true
-    }
-
     override fun initData() {
         arguments?.run {
             getParcelable<WebBean>("web")?.let {

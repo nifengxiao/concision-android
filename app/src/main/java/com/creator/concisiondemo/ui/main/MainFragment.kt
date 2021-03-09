@@ -7,11 +7,10 @@ import com.creator.config.app.base.BaseFragment
 import com.creator.concisiondemo.databinding.FragmentMainBinding
 import com.creator.concisiondemo.ui.MainViewModel
 import com.creator.concisiondemo.utils.initMain
+import com.creator.concisiondemo.utils.openStatusBar
 import com.creator.config.utils.init
 import com.creator.config.utils.interceptLongClick
-import com.gyf.immersionbar.ImmersionBar
 import kotlinx.android.synthetic.main.fragment_main.*
-import kotlinx.android.synthetic.main.include_toolbar.*
 
 /**
  * @CreateDate:     2021/2/20
@@ -41,8 +40,4 @@ class MainFragment: BaseFragment<MainViewModel, FragmentMainBinding>(){
         nav_view.interceptLongClick(R.id.navigation_home,R.id.navigation_dashboard,R.id.navigation_event)
     }
 
-
-    override fun isVisibleStatusBar(): Boolean {
-        return false
-    }
 }

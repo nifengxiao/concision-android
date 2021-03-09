@@ -27,8 +27,6 @@ abstract class CommonBaseFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fr
 
     //是否第一次加载
     private var isFirst: Boolean = true
-    //是否开启ImmersionBar
-    var isOpenDefaultImmersionBar: Boolean = true
 
     lateinit var mViewModel: VM
 
@@ -72,17 +70,11 @@ abstract class CommonBaseFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fr
 
     /**
      * 是否开启ImmersionBar
+     * 如需自定义 请传入false
      * @return 默认开启
      */
     open fun openDefaultImmersionBar(): Boolean {
-        return isOpenDefaultImmersionBar
-    }
-
-    /**
-     * 重设ImmersionBar
-     */
-    open fun resetImmersionBar() {
-        isOpenDefaultImmersionBar = false
+        return true
     }
 
 

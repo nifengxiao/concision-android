@@ -5,13 +5,13 @@ import com.blankj.utilcode.util.ConvertUtils
 import com.creator.concision.ext.nav
 import com.creator.concision.ext.navigateAction
 import com.creator.concision.ext.util.getResString
-import com.creator.concision.weight.recyclerview.SpaceItemDecoration
 import com.creator.concisiondemo.R
 import com.creator.concisiondemo.data.model.bean.MenuBean
 import com.creator.concisiondemo.databinding.FragmentMenuBinding
 import com.creator.concisiondemo.ui.adapter.MenuAdapter
+import com.creator.concisiondemo.utils.openStatusBar
 import com.creator.config.app.base.BaseFragment
-import com.gyf.immersionbar.ImmersionBar
+import com.luck.picture.lib.decoration.GridSpacingItemDecoration
 import kotlinx.android.synthetic.main.fragment_menu.*
 import java.util.*
 
@@ -33,7 +33,7 @@ class MenuFragment : BaseFragment<MenuViewModel, FragmentMenuBinding>() {
         //配置Recyclerview
         rc_menu.let {
             it.adapter = menuAdapter
-            it.addItemDecoration(SpaceItemDecoration(0, ConvertUtils.dp2px(8f), true))
+            it.addItemDecoration(GridSpacingItemDecoration(2, ConvertUtils.dp2px(8f), true))
         }
         rc_menu.adapter = menuAdapter
         menuAdapter.data = arrayListOf(
@@ -60,13 +60,9 @@ class MenuFragment : BaseFragment<MenuViewModel, FragmentMenuBinding>() {
         return -0x1000000 or random.nextInt(0x00ffffff)
     }
 
-    override fun resetImmersionBar() {
-        super.resetImmersionBar()
-        ImmersionBar
-            .with(this)
-            .navigationBarEnable(false)
-            .titleBar(view)
-            .statusBarDarkFont(true)
-            .init()
+    override fun openDefaultImmersionBar(): Boolean {
+        this.openStatusBar()
+        return false
     }
+
 }
