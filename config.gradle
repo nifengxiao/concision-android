@@ -139,7 +139,10 @@ ext {
             "mmkv"                         : "com.tencent:mmkv-static:1.2.7",
 
             //日志拦截器
-            "logginginterceptor"           : "com.safframework.log:saf-logginginterceptor:1.4.9"
+            "logginginterceptor"           : "com.safframework.log:saf-logginginterceptor:1.4.9",
+
+            //条件选择器
+            "pickerView"                   : "com.contrarywind:Android-PickerView:4.1.9"
     ]
 
 

@@ -5,17 +5,12 @@ import android.graphics.drawable.ColorDrawable
 import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
-import com.creator.concision.core.viewmodel.BaseViewModel
 import com.creator.concisiondemo.ui.main.dashboard.DashboardFragment
-import com.creator.concisiondemo.ui.main.home.HomeFragment
 import com.creator.concisiondemo.ui.main.event.EventFragment
-import com.creator.config.app.base.BaseFragment
+import com.creator.concisiondemo.ui.main.home.HomeFragment
 import com.gyf.immersionbar.ImmersionBar
 
 /**

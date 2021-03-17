@@ -10,7 +10,7 @@ import com.kingja.loadsir.core.LoadService
 /**
  * @CreateDate:     2021/2/23
  * @Author:         Creator
- * @Description:
+ * @Description:    页面状态设置
  */
 
 /**

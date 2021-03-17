@@ -24,54 +24,47 @@ android {
         multiDexEnabled true //分包
     }
 
-    signingConfigs {
-        debug {
-            keyAlias 'concision'
-            keyPassword 'concision'
-            storeFile file('../打包相关/concision.jks')
-            storePassword 'concision'
-        }
-        release {
-            keyAlias "concision"
-            storePassword "concision"
-            storeFile file("../打包相关/concision.jks")//签名⽂件的path
-            keyPassword "concision"
-        }
-    }
+//    signingConfigs {
+//        debug {
+//            keyAlias 'concision'
+//            keyPassword 'concision'
+//            storeFile file('../打包相关/concision.jks')
+//            storePassword 'concision'
+//        }
+//        release {
+//            keyAlias "concision"
+//            storePassword "concision"
+//            storeFile file("../打包相关/concision.jks")//签名⽂件的path
+//            keyPassword "concision"
+//        }
+//    }
 
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-
-    buildTypes {
-        debug {
-            buildConfigField "boolean", "LOG_DEBUG", "true"
-            buildConfigField "boolean", "USE_CANARY", "true"
-            buildConfigField "boolean", "IS_BUILD_MODULE", "${isBuildModule}"
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            multiDexKeepProguard file('proguard-rules.pro')
-            signingConfig signingConfigs.release
-        }
-
-        release {
-            buildConfigField "boolean", "LOG_DEBUG", "false"
-            buildConfigField "boolean", "USE_CANARY", "false"
-            buildConfigField "boolean", "IS_BUILD_MODULE", "${isBuildModule}"
-            minifyEnabled false
-            shrinkResources false
-            zipAlignEnabled false
-            aaptOptions.cruncherEnabled = false
-            aaptOptions.useNewCruncher = false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            multiDexKeepProguard file('multidex-config.pro')
-            proguardFiles 'proguard-rules.pro'
-            signingConfig signingConfigs.release
-        }
-    }
+//    buildTypes {
+//        debug {
+//            buildConfigField "boolean", "LOG_DEBUG", "true"
+//            buildConfigField "boolean", "USE_CANARY", "true"
+//            buildConfigField "boolean", "IS_BUILD_MODULE", "${isBuildModule}"
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            multiDexKeepProguard file('proguard-rules.pro')
+//            signingConfig signingConfigs.release
+//        }
+//
+//        release {
+//            buildConfigField "boolean", "LOG_DEBUG", "false"
+//            buildConfigField "boolean", "USE_CANARY", "false"
+//            buildConfigField "boolean", "IS_BUILD_MODULE", "${isBuildModule}"
+//            minifyEnabled false
+//            shrinkResources false
+//            zipAlignEnabled false
+//            aaptOptions.cruncherEnabled = false
+//            aaptOptions.useNewCruncher = false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            multiDexKeepProguard file('multidex-config.pro')
+//            proguardFiles 'proguard-rules.pro'
+//            signingConfig signingConfigs.release
+//        }
+//    }
 
     lintOptions {
         disable 'InvalidPackage'

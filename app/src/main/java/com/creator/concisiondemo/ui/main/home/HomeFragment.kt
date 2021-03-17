@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.blankj.utilcode.util.ConvertUtils
-import com.blankj.utilcode.util.LogUtils
+import com.blankj.utilcode.util.FileUtils
 import com.creator.concision.ext.nav
 import com.creator.concision.ext.navigateAction
 import com.creator.concisiondemo.R
@@ -18,8 +18,6 @@ import com.creator.concision.weight.recyclerview.SpaceItemDecoration
 import com.creator.concisiondemo.data.model.bean.WebBean
 import com.creator.concisiondemo.utils.openStatusBar
 import com.creator.config.utils.loadListData
-import com.creator.config.utils.showMessage
-import com.gyf.immersionbar.ImmersionBar
 import com.kingja.loadsir.callback.Callback
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -41,7 +39,6 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
     }
 
     override fun initView(savedInstanceState: Bundle?) {
-
         //初始化状态页
         loadSirInit(refresh, onReloadListener = Callback.OnReloadListener {
             requestHomeViewModel.getHomeData(true)

@@ -10,6 +10,7 @@ import com.creator.concisiondemo.databinding.FragmentSplashBinding
 import com.creator.concisiondemo.utils.closeSplashTheme
 import com.creator.config.app.base.BaseFragment
 import com.creator.config.app.sp.AppPreHelper
+import com.creator.config.utils.UrlUtils
 
 /**
  * @CreateDate:     2021/2/20
@@ -24,9 +25,17 @@ class SplashFragment : BaseFragment<SplashViewModel, FragmentSplashBinding>() {
 
     override fun initView(savedInstanceState: Bundle?) {
         LogUtils.i("SplashFragment到guide耗时" + System.currentTimeMillis())
+        UrlUtils.initUrl(requireContext()) {
+            startApp()
+        }
+    }
+
+    /**
+     * 启动app
+     */
+    private fun startApp() {
         closeSplashTheme()
         isInit = true
-
         if (AppPreHelper.isOpenGuide) {
             nav().navigateAction(R.id.action_splash_to_menu)
         } else {

@@ -7,7 +7,7 @@ import com.tencent.mmkv.MMKV
 /**
  * @CreateDate:     2021/3/5
  * @Author:         Creator
- * @Description:    mmkv
+ * @Description:    mmkv初始化
  */
 class MMkvInitializer : Initializer<String> {
     override fun create(context: Context): String {

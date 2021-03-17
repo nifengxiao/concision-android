@@ -70,8 +70,7 @@
   - loadsir（状态管理）
   - material-dailog(基于材料设计下的dialog)
   - CustomPopwindow(简单易用popwindow)
-  - immersionbar(状态栏相关)
-
+  - immersionbar(状态栏)
 - H5相关
   - AgentWeb
 
@@ -86,5 +85,24 @@
     - 配置导航的位置在navigation中的navigation.xml里面
 - viewModel
     - 继承 BaseViewModel
-
--
+    - 这里的设计是把页面数据的viewModel和数据相关的viewModel分开写了，有一个好处，可灵活调配数据的viewModel，一是可以减少重复代码，一是为了让结构更加清晰
+- 数据请求
+    - 域名配置 config->assets->urls.json  
+    - 网络请求构建  config->network->NetworkApi
+    - 网络请求公共参数配置 config->network->MyHeadInterceptor
+    - 网络请求基类 config->data->model->base->BaseApiBean、BaseListBean(请根据自己项目结构进行定制)
+    - Api配置 app->network->ApiService
+    - 网络请求管理器 app->network->HttpRequestManger
+    - 网络请求封装扩展函数 concision->ext->BaseViewModelExt
+        - request ( 请在viewmodel中调用)
+- 其余公共配置
+    - 页面状态配置 config->res->layout->layout_empty、layout_error、layout_loading
+    - 加载框配置   config->res->layout->layout_custom_progress_dialog_view
+    - 标题 config->res->layout->include_toolbar
+    - 确认弹框  config->utils->MessageExt
+    - 条件选择器 config->utils->PickerUtils
+    - 上拉加载下拉刷新 config->app->App
+    - 版本控制 config.gradle
+    - 三方包导入 config.gradle
+    - 环境配置 config->build.gradle 
+- next ：app更新、权限控制

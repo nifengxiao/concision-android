@@ -4,6 +4,7 @@ import com.creator.concision.core.app.appContext
 import com.creator.concision.network.BaseNetworkApi
 import com.creator.concision.network.interceptor.CacheInterceptor
 import com.google.gson.GsonBuilder
+import com.safframework.http.interceptor.BuildConfig
 import com.safframework.http.interceptor.LoggingInterceptor
 import okhttp3.Cache
 import okhttp3.OkHttpClient
@@ -40,7 +41,7 @@ class NetworkApi : BaseNetworkApi() {
             //添加缓存拦截器 可传入缓存天数，不传默认7天
             addInterceptor(CacheInterceptor())
             val loggingInterceptor = LoggingInterceptor.Builder()
-                .loggable(true) // TODO: 发布到生产环境需要改成false
+                .loggable(BuildConfig.DEBUG)
                 .request()
                 .requestTag("Request")
                 .response()

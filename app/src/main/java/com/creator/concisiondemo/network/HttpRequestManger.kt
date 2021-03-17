@@ -3,7 +3,6 @@ package com.creator.concisiondemo.network
 import com.creator.config.data.model.base.BaseApiBean
 import com.creator.config.data.model.base.BaseListBean
 import com.creator.concisiondemo.data.model.bean.ArticleBean
-import com.creator.concisiondemo.network.service.articleApiService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.withContext
@@ -24,7 +23,7 @@ class HttpRequestManger {
      */
     suspend fun getHomeData(pageNo: Int): BaseApiBean<BaseListBean<ArticleBean>> {
         return withContext(Dispatchers.IO) {
-            val data = async { articleApiService.getArticleList(pageNo) }
+            val data = async { apiService.getArticleList(pageNo) }
             data.await()
         }
     }

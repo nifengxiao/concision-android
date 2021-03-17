@@ -7,6 +7,7 @@ import com.creator.concisiondemo.databinding.FragmentDashboardBinding
 import com.creator.config.app.base.BaseFragment
 
 class DashboardFragment : BaseFragment<DashboardViewModel, FragmentDashboardBinding>() {
+
     override fun layoutId(): Int {
         return R.layout.fragment_dashboard
     }
@@ -18,9 +19,9 @@ class DashboardFragment : BaseFragment<DashboardViewModel, FragmentDashboardBind
             Observer<String> { t ->
                 mViewModel.text.set(t)
                 mViewModel.text.notifyChange()
-            })
+            }
+        )
+
+
     }
-
-
-
 }

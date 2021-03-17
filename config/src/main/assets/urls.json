@@ -1,0 +1,23 @@
+[
+  {
+    "name": "发布环境",
+    "url": "https://wanandroid.com/",
+    "ext_url": [
+      {
+        "domain_name": "douban",
+        "url": "https://api.douban.com"
+      }
+    ]
+  },
+  {
+    "name": "测试环境",
+    "url": "https://wanandroid.com/",
+    "ext_url": [
+      {
+        "domain_name": "douban",
+        "url": "https://api.douban.com"
+      }
+    ]
+  }
+]
+

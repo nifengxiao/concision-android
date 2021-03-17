@@ -102,6 +102,7 @@ dependencies {
     api rootProject.ext.dependencies["autosize"]
     //列表适配器(无需混淆) https://github.com/CymChad/BaseRecyclerViewAdapterHelper/blob/master/readme/0-BaseRecyclerViewAdapterHelper.md
     api rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]
+
     //刷新 https://github.com/scwang90/SmartRefreshLayout
 //    api  'com.scwang.smart:refresh-layout-kernel:2.0.3'      //核心必须依赖 (必选)
 //    api  'com.scwang.smart:refresh-header-classics:2.0.3'    //经典刷新头 (可选)
@@ -143,16 +144,28 @@ dependencies {
     api rootProject.ext.dependencies["immersionbar-components"]
     api rootProject.ext.dependencies["immersionbar-ktx"]
 
-
     //启动优化
     api rootProject.ext.dependencies["startup"]
-
     //mmkv
     api rootProject.ext.dependencies["mmkv"]
-
-    //    日志拦截器
+    //日志拦截器
     api rootProject.ext.dependencies["logginginterceptor"]
 
+    //条件选择器
+    api rootProject.ext.dependencies["pickerView"]
+
     api 'androidx.core:core:1.5.0-alpha05'
+
+//    //paging
+//    def paging_version = "2.1.2"
+//    api "androidx.paging:paging-runtime:$paging_version" // For Kotlin use paging-runtime-ktx
+//    def room_version = "2.2.6"
+//
+//    //room
+//    api "androidx.room:room-runtime:$room_version"
+//    kapt "androidx.room:room-compiler:$room_version"
+//    // optional - Kotlin Extensions and Coroutines support for Room
+//    api "androidx.room:room-ktx:$room_version"
+
 
 }
