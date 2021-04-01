@@ -31,7 +31,6 @@ class GuideFragment: BaseFragment<GuideViewModel, FragmentGuideBinding>(){
             LogUtils.i("SettingBean", AppPreHelper.setting)
             nav().navigateAction(R.id.action_guide_menu)
         }
-
-
     }
+
 }

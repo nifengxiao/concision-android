@@ -35,7 +35,7 @@ interface CommonApiService {
     /**
      * 替换地址
      * 用法 初始化的时候请添上
-     *
+     * RetrofitUrlManager.getInstance().putDomain(name, i.url);
      */
     @Headers("Domain-Name: douban") // Add the Domain-Name header
     @GET("xxx")

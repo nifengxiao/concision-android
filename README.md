@@ -2,12 +2,12 @@
 
 ### 宗旨
 
-打造简洁、易用、高效的快速开发框架！
+打造简洁、易用、高效的快速开发模板！
 
 ### 优势
 
-- 封装各种实际开发过程中重复、繁杂的操作，把复杂的问题交给框架处理。
-- 配置集中化，免去寻找配置所造成的时间成本浪费。
+- 封装各种实际开发过程中重复、繁杂的操作。
+- 配置集中化，方便配置。
 - 集成易用框架并实现完整逻辑，只需一次调用，即可实现大量代码。
 
 ### 架构说明
@@ -85,16 +85,18 @@
     - 配置导航的位置在navigation中的navigation.xml里面
 - viewModel
     - 继承 BaseViewModel
+    - 一个是界面数据相关的viewModel，一个是获取数据所需要的viewModel
     - 这里的设计是把页面数据的viewModel和数据相关的viewModel分开写了，有一个好处，可灵活调配数据的viewModel，一是可以减少重复代码，一是为了让结构更加清晰
 - 数据请求
-    - 域名配置 config->assets->urls.json  
+    - 域名配置 config->assets->urls.json 
+    - 域名切换 具体配置已在config->utils->UrlUtils写好
     - 网络请求构建  config->network->NetworkApi
-    - 网络请求公共参数配置 config->network->MyHeadInterceptor
+    - 网络请求公共参数配置 config->network->ConfigInterceptor
     - 网络请求基类 config->data->model->base->BaseApiBean、BaseListBean(请根据自己项目结构进行定制)
     - Api配置 app->network->ApiService
     - 网络请求管理器 app->network->HttpRequestManger
     - 网络请求封装扩展函数 concision->ext->BaseViewModelExt
-        - request ( 请在viewmodel中调用)
+    -  request ( 请在viewmodel中调用)
 - 其余公共配置
     - 页面状态配置 config->res->layout->layout_empty、layout_error、layout_loading
     - 加载框配置   config->res->layout->layout_custom_progress_dialog_view
@@ -103,6 +105,8 @@
     - 条件选择器 config->utils->PickerUtils
     - 上拉加载下拉刷新 config->app->App
     - 版本控制 config.gradle
-    - 三方包导入 config.gradle
-    - 环境配置 config->build.gradle 
-- next ：app更新、权限控制
+    - 三方包管理 config.gradle
+    - 环境配置 config->build.gradle
+- next ：app更新、权限控制、文件上传下载、图片预览、视频播放、手动新增域名
+
+#### 共勉:学习不是为了炫技，而是为了解决实际问题。

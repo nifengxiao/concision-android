@@ -12,18 +12,22 @@ import com.creator.concisiondemo.ui.adapter.MenuAdapter
 import com.creator.concisiondemo.utils.openStatusBar
 import com.creator.config.app.base.BaseFragment
 import com.luck.picture.lib.decoration.GridSpacingItemDecoration
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_menu.*
 import java.util.*
+import javax.inject.Inject
 
 /**
  * @CreateDate:     2021/3/8
  * @Author:         Creator
  * @Description:    菜单
  */
+@AndroidEntryPoint
 class MenuFragment : BaseFragment<MenuViewModel, FragmentMenuBinding>() {
 
     //文章
-    private val menuAdapter: MenuAdapter by lazy { MenuAdapter() }
+    @Inject
+    lateinit var menuAdapter: MenuAdapter
 
     override fun layoutId(): Int {
         return R.layout.fragment_menu
@@ -38,7 +42,8 @@ class MenuFragment : BaseFragment<MenuViewModel, FragmentMenuBinding>() {
         rc_menu.adapter = menuAdapter
         menuAdapter.data = arrayListOf(
             MenuBean(getColor(), R.string.menu_main.getResString()),
-            MenuBean(getColor(), R.string.menu_room.getResString())
+            MenuBean(getColor(), R.string.menu_room.getResString()),
+            MenuBean(getColor(), R.string.data_binding.getResString())
         )
         //点击事件
         menuAdapter.setOnItemClickListener { adapter, _, position ->
@@ -50,6 +55,9 @@ class MenuFragment : BaseFragment<MenuViewModel, FragmentMenuBinding>() {
 
                 R.string.menu_room.getResString() -> {
 
+                }
+                R.string.data_binding.getResString()->{
+                    nav().navigateAction(R.id.action_menu_data_binding)
                 }
             }
         }

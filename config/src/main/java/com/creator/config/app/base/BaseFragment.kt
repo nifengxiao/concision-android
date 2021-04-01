@@ -38,7 +38,9 @@ abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding> :
     /**
      * 懒加载 只有当前fragment视图显示时才会触发该方法
      */
-    override fun lazyLoadData() {}
+    override fun lazyLoadData() {
+        initLoadSir()
+    }
 
     /**
      * 创建LiveData观察者 Fragment执行onViewCreated后触发
@@ -48,8 +50,20 @@ abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding> :
     /**
      * Fragment执行onViewCreated后触发
      */
-    override fun initData() {
+    override fun initData() {}
+
+    override fun initLoadSir() {
+        super.initLoadSir()
+        val view = openLoadSir()
+        if (view != null) {
+            loadSirInit(view, onReloadListener = Callback.OnReloadListener {
+                loadSir.showLoading()
+                refresh()
+            })
+            loadSir.showLoading()
+        }
     }
+
 
     /**
      * 打开等待框
@@ -71,40 +85,10 @@ abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding> :
      */
     protected fun loadSirInit(target: Any, onReloadListener: Callback.OnReloadListener) {
         loadSir = LoadSir.getDefault().register(target) {
-            loadSirLoading()
+            loadSir.showLoading()
             onReloadListener.onReload(it)
         }
     }
-
-    /**
-     * LoadSir-loading
-     */
-    protected fun loadSirLoading() {
-        loadSir.showLoading()
-    }
-
-    /**
-     * LoadSir-success
-     */
-    protected fun loadSirSuccess() {
-        loadSir.showSuccess()
-    }
-
-    /**
-     * LoadSir-failed
-     */
-    protected fun loadSirFailed(errorMsg: String) {
-        loadSir.showError(errorMsg)
-    }
-
-
-    /**
-     * LoadSir-failed
-     */
-    protected fun loadSirEmpty() {
-        loadSir.showEmpty()
-    }
-
 
     /**
      * 初始化状态栏
@@ -112,7 +96,7 @@ abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding> :
      * 初始是有状态栏就显示状态栏，没有标题栏默认上移
      */
     override fun initStatusBar() {
-        if (!openDefaultImmersionBar()){
+        if (!openDefaultImmersionBar()) {
             return
         }
         val view = view?.findViewById<Toolbar>(R.id.toolbar)

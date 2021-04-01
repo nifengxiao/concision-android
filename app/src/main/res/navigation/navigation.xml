@@ -67,6 +67,10 @@
 
     </fragment>
 
+    <fragment
+        android:id="@+id/data_binding_fragment"
+        android:name="com.creator.concisiondemo.ui.databinding.DataBindingFragment"
+        android:label="DataBindingFragment" />
 
     <fragment
         android:id="@+id/menu_fragment"
@@ -81,6 +85,13 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
 
+        <action
+            android:id="@+id/action_menu_data_binding"
+            app:destination="@+id/data_binding_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
 
@@ -119,5 +130,6 @@
         app:exitAnim="@anim/slide_out_left"
         app:popEnterAnim="@anim/slide_in_left"
         app:popExitAnim="@anim/slide_out_right" />
+
 
 </navigation>

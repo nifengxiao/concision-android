@@ -3,9 +3,9 @@ package com.creator.config.app.sp
 import com.blankj.utilcode.util.GsonUtils
 import com.blankj.utilcode.util.GsonUtils.fromJson
 import com.blankj.utilcode.util.LogUtils
-import com.blankj.utilcode.util.SPUtils
 import com.blankj.utilcode.util.StringUtils
 import com.creator.config.data.model.bean.SettingBean
+import com.creator.config.data.model.bean.UrlBean
 import com.tencent.mmkv.MMKV
 
 /**
@@ -18,11 +18,24 @@ object AppPreHelper {
     private val appPreShares: MMKV
         get() = MMkvUtil.getMMKv(SPUtilsName.APP_TABLE)
 
+    //url
+    var urls: ArrayList<UrlBean>
+        get() {
+            val urlsStr = appPreShares.getString(SPUtilsName.URLS, "")
+            val urlBeans =
+                fromJson<ArrayList<UrlBean>>(urlsStr, GsonUtils.getListType(UrlBean::class.java))
+            return urlBeans ?: return arrayListOf()
+        }
+        set(value) {
+            appPreShares.encode(SPUtilsName.URLS, GsonUtils.toJson(value))
+        }
+
+
     //存入基本信息
     var setting: SettingBean
         get() {
-            val string = appPreShares.getString(SPUtilsName.SETTING,"")
-            if (StringUtils.isEmpty(string)){
+            val string = appPreShares.getString(SPUtilsName.SETTING, "")
+            if (StringUtils.isEmpty(string)) {
                 return SettingBean()
             }
             val setting = fromJson(string, SettingBean::class.java)

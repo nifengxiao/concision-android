@@ -10,5 +10,5 @@ import kotlinx.android.parcel.Parcelize
  */
 @Parcelize
 data class SettingBean(
-    var isOpenGuide: Boolean = false,
+    var isOpenGuide: Boolean = false
 ) : Parcelable

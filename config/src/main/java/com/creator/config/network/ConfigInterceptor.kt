@@ -7,9 +7,9 @@ import java.io.IOException
 import kotlin.jvm.Throws
 
 /**
- * 自定义头部参数拦截器，传入heads
+ *  公共请求参数配置
  */
-class MyHeadInterceptor : Interceptor {
+class ConfigInterceptor : Interceptor {
 
     @Throws(IOException::class)
     override fun intercept(chain: Interceptor.Chain): Response {

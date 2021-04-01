@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.blankj.utilcode.util.ConvertUtils
-import com.blankj.utilcode.util.FileUtils
 import com.creator.concision.ext.nav
 import com.creator.concision.ext.navigateAction
 import com.creator.concisiondemo.R
@@ -19,20 +18,24 @@ import com.creator.concisiondemo.data.model.bean.WebBean
 import com.creator.concisiondemo.utils.openStatusBar
 import com.creator.config.utils.loadListData
 import com.kingja.loadsir.callback.Callback
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_home.*
+import javax.inject.Inject
 
 /**
  * @CreateDate:     2021/2/23
  * @Author:         YuanFeng
  * @Description:    主页
  */
+@AndroidEntryPoint
 class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
 
     //请求数据ViewModel
     private val requestHomeViewModel: RequestHomeViewModel by viewModels()
 
     //文章
-    private val articleAdapter: ArticleAdapter by lazy { ArticleAdapter() }
+    @Inject
+    lateinit var articleAdapter: ArticleAdapter
 
     override fun layoutId(): Int {
         return R.layout.fragment_home
@@ -41,7 +44,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
     override fun initView(savedInstanceState: Bundle?) {
         //初始化状态页
         loadSirInit(refresh, onReloadListener = Callback.OnReloadListener {
-            requestHomeViewModel.getHomeData(true)
+            refresh()
         })
 
         //配置Recyclerview
@@ -52,7 +55,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
 
         //初始化刷新
         refresh.setOnRefreshListener {
-            requestHomeViewModel.getHomeData(true)
+            refresh()
         }
 
         //初始化加载
@@ -67,17 +70,18 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
             bundle.putParcelable("web", WebBean(articleBean.chapterName, articleBean.link))
             nav().navigateAction(R.id.action_to_web, bundle)
         }
+
     }
 
+    override fun refresh() {
+        super.refresh()
+        requestHomeViewModel.getHomeData(true)
+    }
 
     override fun lazyLoadData() {
         super.lazyLoadData()
-        //第一次进入需要开启loading,加载完成后翻转则不需要
-        if (!requestHomeViewModel.isLoadingSuccess) {
-            loadSir.showLoading()
-        }
-
-        requestHomeViewModel.getHomeData(isRefresh = true, isInit = true)
+        loadSir.showLoading()
+        refresh()
     }
 
     override fun createObserver() {

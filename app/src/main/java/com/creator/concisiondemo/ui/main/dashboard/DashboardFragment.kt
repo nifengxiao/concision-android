@@ -13,7 +13,6 @@ class DashboardFragment : BaseFragment<DashboardViewModel, FragmentDashboardBind
     }
 
     override fun initView(savedInstanceState: Bundle?) {
-        mDatabind.vm = mViewModel
         mViewModel.text.set("Dashboard")
         eventViewModel.test.observe(viewLifecycleOwner,
             Observer<String> { t ->
@@ -21,7 +20,5 @@ class DashboardFragment : BaseFragment<DashboardViewModel, FragmentDashboardBind
                 mViewModel.text.notifyChange()
             }
         )
-
-
     }
 }

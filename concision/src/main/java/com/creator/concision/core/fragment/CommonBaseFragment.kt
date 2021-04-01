@@ -13,6 +13,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import com.blankj.utilcode.util.NetworkUtils
 import com.creator.concision.R
+import com.creator.concision.BR
 import com.creator.concision.core.app.AppInitializer.Companion.app
 import com.creator.concision.core.viewmodel.BaseViewModel
 import com.creator.concision.ext.getVmClass
@@ -22,7 +23,7 @@ import com.creator.concision.ext.getVmClass
  * @Author: hegaojian
  * @Description: ViewModelFragment基类
  */
-abstract class CommonBaseFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fragment() {
+abstract class CommonBaseFragment<VM : BaseViewModel, B : ViewDataBinding> : Fragment() {
 
     //是否第一次加载
     private var isFirst: Boolean = true
@@ -39,7 +40,7 @@ abstract class CommonBaseFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fr
     abstract fun initStatusBar()
 
     //该类绑定的ViewDataBinding
-    lateinit var mDatabind: DB
+    lateinit var mDatabind: B
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -60,11 +61,30 @@ abstract class CommonBaseFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fr
         super.onViewCreated(view, savedInstanceState)
         isFirst = true
         mViewModel = createViewModel()
+        mDatabind.setVariable(BR.vm, mViewModel)
         initView(savedInstanceState)
         createObserver()
         registerDefUIChange()
         initData()
         initStatusBar()
+    }
+
+    /**
+     * 刷新
+     */
+    open fun refresh() {}
+
+    /**
+     * 初始化load
+     */
+    open fun initLoadSir(){}
+
+    /**
+     * 初始化loadSir
+     * 传入View即可开启loadSir
+     */
+    open fun openLoadSir():View?{
+        return null
     }
 
     /**
@@ -173,5 +193,7 @@ abstract class CommonBaseFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fr
             }
         }
     }
+
+
 
 }

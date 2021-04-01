@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProvider
 import com.blankj.utilcode.util.NetworkUtils
+import com.creator.concision.BR
 import com.creator.concision.R
 import com.creator.concision.core.app.appContext
 import com.creator.concision.core.viewmodel.BaseViewModel
@@ -16,11 +17,11 @@ import com.creator.concision.ext.getVmClass
  * @Author: hegaojian
  * @Description: 公共BaseActivity基类
  */
-abstract class CommonBaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : AppCompatActivity() {
+abstract class CommonBaseActivity<VM : BaseViewModel, B : ViewDataBinding> : AppCompatActivity() {
 
     lateinit var mViewModel: VM
 
-    lateinit var mDatabind: DB
+    lateinit var mDatabind: B
 
     abstract fun layoutId(): Int
 
@@ -34,6 +35,7 @@ abstract class CommonBaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : Ap
 
     private fun init(savedInstanceState: Bundle?) {
         mViewModel = createViewModel()
+        mDatabind.setVariable(BR.vm, mViewModel)
         registerUiChange()
         initView(savedInstanceState)
         createObserver()

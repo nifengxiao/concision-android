@@ -3,8 +3,6 @@ package com.creator.config.app
 import android.content.Context
 import androidx.multidex.MultiDex
 import com.creator.concision.core.app.BaseApp
-import com.creator.config.app.sp.AppPreHelper
-import com.creator.config.data.model.bean.SettingBean
 import com.creator.config.weight.loadCallBack.EmptyCallback
 import com.creator.config.weight.loadCallBack.ErrorCallback
 import com.creator.config.weight.loadCallBack.LoadingCallback
@@ -20,7 +18,7 @@ import com.scwang.smart.refresh.layout.SmartRefreshLayout
  * @Author:         YuanFeng
  * @Description:    Application
  */
-class App : BaseApp() {
+abstract class App : BaseApp() {
 
     companion object {
         lateinit var instance: App

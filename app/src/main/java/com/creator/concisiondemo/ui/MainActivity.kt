@@ -1,24 +1,35 @@
 package com.creator.concisiondemo.ui
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.view.KeyEvent
 import android.widget.Toast
+import android.widget.Toolbar
 import androidx.activity.OnBackPressedCallback
+import androidx.annotation.RequiresApi
+import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.navigation.ui.setupActionBarWithNavController
+import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.NetworkUtils
 import com.blankj.utilcode.util.ToastUtils
+import com.creator.concision.BR
 import com.creator.concisiondemo.R
 import com.creator.concisiondemo.data.isInit
 import com.creator.concisiondemo.databinding.ActivityMainBinding
 import com.creator.concisiondemo.utils.closeSplashTheme
 import com.creator.config.app.base.BaseActivity
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.activity_main.*
 
 /**
  * @CreateDate:     2021/2/7
  * @Author:         Creator
  * @Description:    首页
  */
+@AndroidEntryPoint
 class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
 
     //记录第一次按退出按钮的时间
@@ -31,6 +42,7 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
         return R.layout.activity_main
     }
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun initView(savedInstanceState: Bundle?) {
         if (fitBackHomeBug()) return
         nav = Navigation.findNavController(this@MainActivity, R.id.host_fragment)
@@ -38,10 +50,12 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
         initWindow()
     }
 
-    //用于处理
+
+
+    //用于关闭闪屏主题
     private fun initWindow() {
         if (isInit) {
-           closeSplashTheme()
+            closeSplashTheme()
         }
     }
 
@@ -66,10 +80,7 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
     private fun exitApp() {
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                if (nav.currentDestination != null && nav.currentDestination!!.id != R.id.menu_fragment) {
-                    //如果当前界面不是主页，那么直接调用返回即可
-                    nav.navigateUp()
-                } else {
+                if (nav.currentDestination != null && nav.currentDestination!!.id == R.id.menu_fragment || nav.currentDestination!!.id == R.id.guide_fragment) {
                     //是主页 在两秒内点击退出程序
                     if (System.currentTimeMillis() - exitTime > 2000) {
                         ToastUtils.showShort("再按一次退出程序")
@@ -77,6 +88,9 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
                     } else {
                         finish()
                     }
+                } else {
+                    //如果当前界面不是主页，那么直接调用返回即可
+                    nav.navigateUp()
                 }
             }
         })

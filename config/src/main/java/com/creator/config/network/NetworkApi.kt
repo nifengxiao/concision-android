@@ -3,8 +3,8 @@ package com.creator.config.network
 import com.creator.concision.core.app.appContext
 import com.creator.concision.network.BaseNetworkApi
 import com.creator.concision.network.interceptor.CacheInterceptor
+import com.example.config.BuildConfig
 import com.google.gson.GsonBuilder
-import com.safframework.http.interceptor.BuildConfig
 import com.safframework.http.interceptor.LoggingInterceptor
 import okhttp3.Cache
 import okhttp3.OkHttpClient
@@ -36,8 +36,12 @@ class NetworkApi : BaseNetworkApi() {
         builder.apply {
             //设置缓存配置 缓存最大10M
             cache(Cache(File(appContext.cacheDir, "concision"), 10 * 1024 * 1024))
+            //加密
+            addInterceptor(RequestEncryptInterceptor())
+            //解密
+            addInterceptor(ResponseDecryptInterceptor())
             //示例：添加公共heads 注意要设置在日志拦截器之前，不然Log中会不显示head信息
-            addInterceptor(MyHeadInterceptor())
+            addInterceptor(ConfigInterceptor())
             //添加缓存拦截器 可传入缓存天数，不传默认7天
             addInterceptor(CacheInterceptor())
             val loggingInterceptor = LoggingInterceptor.Builder()
@@ -48,13 +52,13 @@ class NetworkApi : BaseNetworkApi() {
                 .responseTag("Response")
                 .hideVerticalLine()// 隐藏竖线边框
                 .build();
-
             //设置拦截器
             addInterceptor(loggingInterceptor)
             //超时时间 连接、读、写
             connectTimeout(10, TimeUnit.SECONDS)
             readTimeout(5, TimeUnit.SECONDS)
             writeTimeout(5, TimeUnit.SECONDS)
+
         }
         return builder
     }

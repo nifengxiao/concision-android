@@ -2,8 +2,6 @@ package com.creator.concisiondemo.ui.web
 
 import android.os.Bundle
 import android.widget.FrameLayout
-import androidx.core.content.ContextCompat
-import com.creator.concision.core.app.appContext
 import com.creator.concision.ext.nav
 import com.creator.concisiondemo.R
 import com.creator.concisiondemo.data.model.bean.WebBean
@@ -11,7 +9,6 @@ import com.creator.config.app.base.BaseFragment
 import com.creator.concisiondemo.databinding.FragmentGuideBinding
 import com.creator.config.utils.hideSoftKeyboard
 import com.creator.config.utils.initClose
-import com.gyf.immersionbar.ImmersionBar
 import com.just.agentweb.AgentWeb
 import kotlinx.android.synthetic.main.fragment_web.*
 import kotlinx.android.synthetic.main.include_toolbar.*

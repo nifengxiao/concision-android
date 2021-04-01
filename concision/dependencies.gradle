@@ -1,0 +1,169 @@
+//用于分组
+def dependencyGroup(Closure closure) {
+    closure.delegate = dependencies
+    return closure
+}
+
+def local = dependencyGroup {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+def basics = dependencyGroup {
+    //androidx
+    api rootProject.ext.dependencies["appcompat"]
+    api rootProject.ext.dependencies["fragment-ktx"]
+    api rootProject.ext.dependencies["constraintlayout"]
+    api 'androidx.core:core:1.5.0-alpha05'
+
+    //材料设计
+    api rootProject.ext.dependencies["material"]
+    //测试相关
+    testImplementation rootProject.ext.dependencies["junit"]
+    androidTestImplementation rootProject.ext.dependencies["androidxJunit"]
+    androidTestImplementation rootProject.ext.dependencies["espresso"]
+    //基础框架
+    //kotlin
+    api rootProject.ext.dependencies["kotlin"]
+    api rootProject.ext.dependencies["ktx"]
+    //lifecycle
+    api rootProject.ext.dependencies["lifecycle-runtime-ktx"]
+    api rootProject.ext.dependencies["lifecycle-common-java8"]
+    api rootProject.ext.dependencies["lifecycle-extensions"]
+    // viewModel
+    api rootProject.ext.dependencies["viewmodel"]
+    // liveData
+    api rootProject.ext.dependencies["livedata"]
+    //event
+    api rootProject.ext.dependencies["unpeek"]
+    //navigation
+    api rootProject.ext.dependencies["navigation"]
+    //分包
+    api rootProject.ext.dependencies["multidex"]
+    //hilt
+    api "com.google.dagger:hilt-android:2.28-alpha"
+    kapt "com.google.dagger:hilt-android-compiler:2.28-alpha"
+}
+
+
+def network = dependencyGroup {
+    //动态替换BaseUrl库(无需混淆) https://github.com/JessYanCoding/RetrofitUrlManager
+    api rootProject.ext.dependencies["retrofit-url-manager"]
+    //retrofit
+    api rootProject.ext.dependencies["retrofit"]
+    api rootProject.ext.dependencies["okhttp3"]
+    //解析库
+    api rootProject.ext.dependencies["converter-gson"]
+    //日志拦截器
+    api rootProject.ext.dependencies["logginginterceptor"]
+
+//    api('com.github.ihsanbal:LoggingInterceptor:3.1.0') {
+//        exclude group: 'org.json', module: 'json'
+//    }
+
+    api 'com.github.simonpercic:oklog-java:2.3.0'
+
+
+}
+
+def multiMedia = dependencyGroup {
+    //图片加载  https://www.fresco-cn.org/docs/getting-started.html
+    api rootProject.ext.dependencies["fresco"]
+    //图片压缩 https://github.com/Curzibn/Luban
+    api rootProject.ext.dependencies["Luban"]
+    //图片选择 https://github.com/LuckSiege/PictureSelector/blob/master/README_CN.md
+    api rootProject.ext.dependencies["picture_library"]
+}
+
+def ui = dependencyGroup {
+    //UI相关
+    //ui适配(无需混淆) https://github.com/JessYanCoding/AndroidAutoSize/blob/master/README-zh.md
+    api rootProject.ext.dependencies["autosize"]
+    //列表适配器(无需混淆) https://github.com/CymChad/BaseRecyclerViewAdapterHelper/blob/master/readme/0-BaseRecyclerViewAdapterHelper.md
+    api rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]
+
+    //刷新 https://github.com/scwang90/SmartRefreshLayout
+//    api  'com.scwang.smart:refresh-layout-kernel:2.0.3'      //核心必须依赖 (必选)
+//    api  'com.scwang.smart:refresh-header-classics:2.0.3'    //经典刷新头 (可选)
+//    api  'com.scwang.smart:refresh-header-radar:2.0.3'       //雷达刷新头 (可选)
+//    api  'com.scwang.smart:refresh-header-falsify:2.0.3'     //虚拟刷新头 (可选)
+//    api  'com.scwang.smart:refresh-header-material:2.0.3'    //谷歌刷新头 (可选)
+//    api  'com.scwang.smart:refresh-header-two-level:2.0.3'   //二级刷新头 (可选)
+//    api  'com.scwang.smart:refresh-footer-ball:2.0.3'        //球脉冲加载 (可选)
+//    api  'com.scwang.smart:refresh-footer-classics:2.0.3'    //经典加载 (可选)
+    //状态
+    api rootProject.ext.dependencies["loadsir"]
+    //导航器
+    api rootProject.ext.dependencies["BottomNavigationViewEx"]
+
+    //material-dialogs
+    //dialog-core https://github.com/afollestad/material-dialogs/blob/main/documentation/CORE.md
+    api rootProject.ext.dependencies["material-dialogs-core"]
+    //dialog-input https://github.com/afollestad/material-dialogs/blob/main/documentation/INPUT.md
+    api rootProject.ext.dependencies["material-dialogs-input"]
+    //dialog生命周期 https://github.com/afollestad/material-dialogs/blob/main/documentation/LIFECYCLE.md
+    api rootProject.ext.dependencies["material-dialogs-lifecycle"]
+    //dialog底部表单 https://github.com/afollestad/material-dialogs/blob/main/documentation/BOTTOMSHEETS.md
+    api rootProject.ext.dependencies["material-dialogs:bottomsheets"]
+    //简易通用popwindow https://github.com/pinguo-zhouwei/CustomPopwindow
+    api rootProject.ext.dependencies["CustomPopwindow"]
+
+    //刷新控件
+    api rootProject.ext.dependencies["refresh-layout-kernel"]
+    api rootProject.ext.dependencies["refresh-header-material"]
+    api rootProject.ext.dependencies["refresh-footer-classics"]
+
+    //条件选择器
+    api rootProject.ext.dependencies["pickerView"]
+
+    //状态栏管理
+    api rootProject.ext.dependencies["immersionbar"]
+    api rootProject.ext.dependencies["immersionbar-components"]
+    api rootProject.ext.dependencies["immersionbar-ktx"]
+
+    //进度拖动条
+    api rootProject.ext.dependencies["bubbleseekbar"]
+}
+
+def utils = dependencyGroup {
+    //工具库(基本涵盖日常所需功能 无需混淆)
+    //功能目录 https://github.com/Blankj/AndroidUtilCode/blob/master/lib/utilcode/README-CN.md
+    //不常用功能目录 https://github.com/Blankj/AndroidUtilCode/blob/master/lib/subutil/README-CN.md
+    api rootProject.ext.dependencies["utilcodex"]
+    //权限(无需混淆) https://github.com/guolindev/PermissionX
+    api rootProject.ext.dependencies["permissionx"]
+    //app更新(无需混淆) https://github.com/WVector/AppUpdate/blob/master/kotlin.md
+    api rootProject.ext.dependencies["update-app-kotlin"]
+    //启动优化
+    api rootProject.ext.dependencies["startup"]
+}
+
+
+def web = dependencyGroup {
+    //h5相关 https://github.com/Justson/AgentWeb
+    api rootProject.ext.dependencies["agentweb"]
+    api rootProject.ext.dependencies["filechooser"]
+    api rootProject.ext.dependencies["downloader"]
+}
+
+def db = dependencyGroup {
+    //mmkv
+    api rootProject.ext.dependencies["mmkv"]
+
+    //    //room
+//    api "androidx.room:room-runtime:$room_version"
+//    kapt "androidx.room:room-compiler:$room_version"
+//    // optional - Kotlin Extensions and Coroutines support for Room
+//    api "androidx.room:room-ktx:$room_version"
+}
+
+
+dependencies {
+    local()
+    basics()
+    network()
+    utils()
+    db()
+    web()
+    multiMedia()
+    ui()
+}

@@ -20,6 +20,6 @@ data class UserBean(
     var password: String = "",
     var token: String = "",
     var type: Int = 0,
-    var username: String = "",
+    var username: String = ""
 ): Parcelable
 

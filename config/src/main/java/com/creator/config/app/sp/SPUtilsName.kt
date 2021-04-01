@@ -9,6 +9,7 @@ object SPUtilsName {
     /********************app相关 ********************/
     const val APP_TABLE = "APP_TABLE" //app share
     const val SETTING = "SETTING"
+    const val URLS = "URLS"
 
     /********************User相关 ********************/
     const val USER_TABLE = "USER_TABLE" //user share

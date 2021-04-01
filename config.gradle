@@ -142,7 +142,10 @@ ext {
             "logginginterceptor"           : "com.safframework.log:saf-logginginterceptor:1.4.9",
 
             //条件选择器
-            "pickerView"                   : "com.contrarywind:Android-PickerView:4.1.9"
+            "pickerView"                   : "com.contrarywind:Android-PickerView:4.1.9",
+
+            //可拖动进度条
+            "bubbleseekbar"                             : "com.xw.repo:bubbleseekbar:3.20-lite"
     ]
 
 

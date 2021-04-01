@@ -32,4 +32,17 @@ object FileUtils {
         }
         return ""
     }
+
+
+    fun saveJson(str:String,fileName: String){
+
+
+
+
+    }
+
+
+
+
+
 }
