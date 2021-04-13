@@ -39,18 +39,6 @@
 
   - Navigation（主要的页面构建）
 
-    - 具体使用：单Activity多fragment 
-
-    - 优势：
-
-      1.fragment构建速度比Activity高10倍左右，可以用fragment构建更加轻量的应用，页面间的切换会更加流畅.
-
-      2.更方便的生命周期管理，灵活性更强
-
-      3.navigation简化了fragment复杂的管理，解决了初期使用fragment带来的大量坑，如空指针、页面穿透、事务调用过于繁琐、内存泄漏等问题。
-
-      4.导航关系可视化
-
    - 网络相关
      - retrofit+okhttp3 （网络库）
      - retrofit-url-manager（动态替换BaseUrl库）
