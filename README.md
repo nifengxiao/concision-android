@@ -1,5 +1,8 @@
 # Concision
 
+### 快速创建mvvm相关功能
+[concision-template](https://github.com/nifengxiao/concision-template)
+
 ### 宗旨
 
 打造简洁、易用、高效的快速开发模板！
