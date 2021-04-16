@@ -98,6 +98,7 @@
     - 版本控制 config.gradle
     - 三方包管理 config.gradle
     - 环境配置 config->build.gradle
-- next ：app更新、权限控制、文件上传下载、图片预览、视频播放、手动新增域名
+- next ：app更新、权限控制、文件上传下载、图片预览、视频播放
 
-#### 共勉:学习不是为了炫技，而是为了解决实际问题。
+#### 感谢
+[JetpackMvvm](https://github.com/hegaojian/JetpackMvvm)
