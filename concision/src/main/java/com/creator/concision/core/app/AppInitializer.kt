@@ -11,6 +11,7 @@ import com.creator.concision.core.activity.BaseLifeCycleCallBack
  * @Author:         Creator
  * @Description:    简化启动
  */
+//全局上下文
 val appContext: Application by lazy { AppInitializer.app }
 
 class AppInitializer : Initializer<Application> {

@@ -3,26 +3,19 @@ package com.creator.concisiondemo.ui
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.view.KeyEvent
 import android.widget.Toast
-import android.widget.Toolbar
 import androidx.activity.OnBackPressedCallback
 import androidx.annotation.RequiresApi
-import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import androidx.navigation.ui.setupActionBarWithNavController
-import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.NetworkUtils
 import com.blankj.utilcode.util.ToastUtils
-import com.creator.concision.BR
 import com.creator.concisiondemo.R
 import com.creator.concisiondemo.data.isInit
 import com.creator.concisiondemo.databinding.ActivityMainBinding
 import com.creator.concisiondemo.utils.closeSplashTheme
 import com.creator.config.app.base.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.activity_main.*
 
 /**
  * @CreateDate:     2021/2/7

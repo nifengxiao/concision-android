@@ -19,7 +19,4 @@ class LoginFragment: BaseFragment<LoginViewModel, FragmentGuideBinding>(){
     override fun initView(savedInstanceState: Bundle?) {
 
     }
-
-
-
 }

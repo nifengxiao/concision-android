@@ -43,7 +43,8 @@ class MenuFragment : BaseFragment<MenuViewModel, FragmentMenuBinding>() {
         menuAdapter.data = arrayListOf(
             MenuBean(getColor(), R.string.menu_main.getResString()),
             MenuBean(getColor(), R.string.menu_room.getResString()),
-            MenuBean(getColor(), R.string.data_binding.getResString())
+            MenuBean(getColor(), R.string.data_binding.getResString()),
+            MenuBean(getColor(), R.string.test.getResString())
         )
         //点击事件
         menuAdapter.setOnItemClickListener { adapter, _, position ->
@@ -58,6 +59,12 @@ class MenuFragment : BaseFragment<MenuViewModel, FragmentMenuBinding>() {
                 }
                 R.string.data_binding.getResString()->{
                     nav().navigateAction(R.id.action_menu_data_binding)
+                }
+
+                R.string.test.getResString()->{
+                    val bundle = Bundle()
+                    bundle.putString("name","我是传进去的值")
+                    nav().navigateAction(R.id.action_menu_fragment_to_testFragment,bundle)
                 }
             }
         }

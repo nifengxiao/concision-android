@@ -2,6 +2,8 @@ package com.creator.config.app.sp
 
 import com.blankj.utilcode.util.GsonUtils
 import com.blankj.utilcode.util.StringUtils
+import com.creator.config.app.appViewModel
+import com.creator.config.data.model.bean.SettingBean
 import com.creator.config.data.model.bean.UserBean
 import com.tencent.mmkv.MMKV
 
@@ -24,6 +26,7 @@ object UserPreHelper {
             return GsonUtils.fromJson(string, UserBean::class.java) ?: return UserBean()
         }
         set(userBean) {
+            appViewModel.userinfo.postValue(userBean)
             userShares.encode(SPUtilsName.USER, GsonUtils.toJson(userBean))
         }
 
@@ -49,6 +52,7 @@ object UserPreHelper {
      * 清空用户信息
      */
     fun clearAllData() {
+        appViewModel.userinfo.postValue(UserBean())
         userShares.clear()
     }
 }

@@ -4,6 +4,7 @@ import com.blankj.utilcode.util.GsonUtils
 import com.blankj.utilcode.util.GsonUtils.fromJson
 import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.StringUtils
+import com.creator.config.app.appViewModel
 import com.creator.config.data.model.bean.SettingBean
 import com.creator.config.data.model.bean.UrlBean
 import com.tencent.mmkv.MMKV
@@ -44,6 +45,7 @@ object AppPreHelper {
         }
         set(settingBean) {  //注意 这个方法最好仅限于更新网络数据的时候使用
             settingBean.isOpenGuide = setting.isOpenGuide
+            appViewModel.setting.postValue(settingBean)
             appPreShares.encode(SPUtilsName.SETTING, GsonUtils.toJson(settingBean))
         }
 
@@ -54,6 +56,7 @@ object AppPreHelper {
             val settingReplace = setting
             settingReplace.isOpenGuide = value
             LogUtils.i("SettingBean-->更改是否打开过引导页", settingReplace)
+            appViewModel.setting.postValue(settingReplace)
             appPreShares.encode(SPUtilsName.SETTING, GsonUtils.toJson(settingReplace))
         }
 
@@ -61,6 +64,7 @@ object AppPreHelper {
      * 清空App所有信息
      */
     fun clearAllData() {
+        appViewModel.setting.postValue(SettingBean())
         appPreShares.clear()
     }
 

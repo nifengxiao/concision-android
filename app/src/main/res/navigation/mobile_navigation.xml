@@ -13,9 +13,9 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.creator.concisiondemo.ui.main.dashboard.DashboardFragment"
+        android:name="com.creator.concisiondemo.ui.main.appviewmodel.AppViewModelFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_appviewmodel" />
 
     <fragment
         android:id="@+id/navigation_event"

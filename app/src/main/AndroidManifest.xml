@@ -22,6 +22,9 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+
+                <!-- 为Activity设置<nav-graph/>标签 -->
+<!--                <nav-graph android:value="@navigation/navigation" />-->
             </intent-filter>
         </activity>
         <!-- 屏幕适配 根据设计图尺寸来定 -->

@@ -10,5 +10,6 @@
     <string name="menu_main">Main</string>
     <string name="menu_room">Room</string>
     <string name="data_binding">DataBinding</string>
+    <string name="test">Test</string>
 
 </resources>

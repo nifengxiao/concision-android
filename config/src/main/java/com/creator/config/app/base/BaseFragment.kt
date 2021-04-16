@@ -4,9 +4,6 @@ import androidx.appcompat.widget.Toolbar
 import androidx.databinding.ViewDataBinding
 import com.creator.concision.core.fragment.CommonBaseFragment
 import com.creator.concision.core.viewmodel.BaseViewModel
-import com.creator.concision.ext.getAppViewModel
-import com.creator.config.app.event.AppViewModel
-import com.creator.config.app.event.EventViewModel
 import com.creator.config.utils.*
 import com.example.config.R
 import com.gyf.immersionbar.ImmersionBar
@@ -22,13 +19,6 @@ import com.kingja.loadsir.core.LoadSir
  */
 abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding> :
     CommonBaseFragment<VM, DB> {
-
-
-    //Application全局的ViewModel，里面存放了一些账户信息，基本配置信息等
-    val appViewModel: AppViewModel by lazy { getAppViewModel<AppViewModel>() }
-
-    //Application全局的ViewModel，用于发送全局通知操作
-    val eventViewModel: EventViewModel by lazy { getAppViewModel<EventViewModel>() }
 
     //状态页
     lateinit var loadSir: LoadService<Any>
