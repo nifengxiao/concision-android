@@ -7,7 +7,6 @@ import com.creator.config.app.base.BaseFragment
 import com.creator.concisiondemo.databinding.FragmentMainBinding
 import com.creator.concisiondemo.ui.MainViewModel
 import com.creator.concisiondemo.utils.initMain
-import com.creator.concisiondemo.utils.openStatusBar
 import com.creator.config.utils.init
 import com.creator.config.utils.interceptLongClick
 import kotlinx.android.synthetic.main.fragment_main.*
@@ -32,12 +31,12 @@ class MainFragment: BaseFragment<MainViewModel, FragmentMainBinding>(){
         nav_view.init{
             when (it) {
                 R.id.navigation_home -> mainViewpager.setCurrentItem(0, false)
-                R.id.navigation_dashboard -> mainViewpager.setCurrentItem(1, false)
+                R.id.navigation_appviewmodel -> mainViewpager.setCurrentItem(1, false)
                 R.id.navigation_event -> mainViewpager.setCurrentItem(2, false)
             }
         }
         //禁止长按出现Toast
-        nav_view.interceptLongClick(R.id.navigation_home,R.id.navigation_dashboard,R.id.navigation_event)
+        nav_view.interceptLongClick(R.id.navigation_home,R.id.navigation_appviewmodel,R.id.navigation_event)
     }
 
 }

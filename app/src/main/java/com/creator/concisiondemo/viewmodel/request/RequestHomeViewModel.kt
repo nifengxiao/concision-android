@@ -7,6 +7,9 @@ import com.creator.concision.ext.request
 import com.creator.config.data.model.base.BaseListBean
 import com.creator.concisiondemo.data.model.bean.ArticleBean
 import com.creator.concisiondemo.network.HttpRequestCoroutine
+import com.creator.concisiondemo.network.apiService
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 /**
  * @CreateDate:     2021/2/23
@@ -30,7 +33,12 @@ class RequestHomeViewModel : BaseViewModel() {
         if (isRefresh) {
             pageNo = 0
         }
-        request({ HttpRequestCoroutine.getHomeData(pageNo) }, {
+        request({
+            withContext(Dispatchers.IO){
+                apiService.getArticleList(pageNo)
+            }
+//            HttpRequestCoroutine.getHomeData(pageNo)
+        }, {
             //请求成功
             pageNo++
 
@@ -76,6 +84,7 @@ class RequestHomeViewModel : BaseViewModel() {
                 )
             articleData.value = listDataUiState
         })
+
     }
 
 }

@@ -1,5 +1,6 @@
 package com.creator.concisiondemo.ui.adapter
 
+import android.content.Context
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
 import com.creator.concisiondemo.R

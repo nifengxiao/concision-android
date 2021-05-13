@@ -1,4 +1,4 @@
-package com.creator.config.app.sp
+package com.creator.config.app.cache
 
 import android.os.Parcelable
 import com.tencent.mmkv.MMKV

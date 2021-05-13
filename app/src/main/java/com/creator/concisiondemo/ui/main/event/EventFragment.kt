@@ -3,6 +3,7 @@ package com.creator.concisiondemo.ui.main.event
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import com.blankj.utilcode.util.LogUtils
+import com.creator.concision.core.app.appContext
 import com.creator.concisiondemo.R
 import com.creator.concisiondemo.databinding.FragmentEventBinding
 import com.creator.concisiondemo.utils.openStatusBar
@@ -32,7 +33,7 @@ class EventFragment : BaseFragment<EventViewModel, FragmentEventBinding>() {
 
     inner class ProxyClick {
         fun change() {
-            eventViewModel.test.value = "我已更改"
+            eventViewModel.test.value = "我只想穿个数据"
         }
     }
 }

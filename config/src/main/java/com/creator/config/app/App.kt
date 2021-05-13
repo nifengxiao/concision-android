@@ -42,7 +42,6 @@ abstract class App : BaseApp() {
 
     override fun onCreate() {
         super.onCreate()
-        //分包
         instance = this
         eventViewModelInstance = getAppViewModelProvider().get(EventViewModel::class.java)
         appViewModelInstance = getAppViewModelProvider().get(AppViewModel::class.java)
@@ -53,8 +52,7 @@ abstract class App : BaseApp() {
             .addCallback(EmptyCallback())//空
             .setDefaultCallback(SuccessCallback::class.java)//设置默认加载状态页
             .commit()
-        //图片
-        Fresco.initialize(this);
+
     }
 
     init {

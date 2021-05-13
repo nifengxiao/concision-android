@@ -18,13 +18,33 @@ val HttpRequestCoroutine: HttpRequestManger by lazy(mode = LazyThreadSafetyMode.
 
 class HttpRequestManger {
 
+//    /**
+//     * 获取首页文章数据
+//     */
+//    suspend fun getHomeData(pageNo: Int): ApiResponse<ApiPagerResponse<ArrayList<AriticleResponse>>> {
+//        //同时异步请求2个接口，请求完成后合并数据
+//        return withContext(Dispatchers.IO) {
+//            val listData = async { apiService.getAritrilList(pageNo) }
+//            //如果App配置打开了首页请求置顶文章，且是第一页
+//            if (CacheUtil.isNeedTop() && pageNo == 0) {
+//                val topData = async { apiService.getTopAritrilList() }
+//                listData.await().data.datas.addAll(0, topData.await().data)
+//                listData.await()
+//            } else {
+//                listData.await()
+//            }
+//        }
+//    }
+//
+
     /**
      * 获取首页文章数据
      */
+    //suspend 挂起函数修饰符 必须加
     suspend fun getHomeData(pageNo: Int): BaseApiBean<BaseListBean<ArticleBean>> {
+        //withContext在切到IO之后，执行完毕会自动回到主线程
         return withContext(Dispatchers.IO) {
-            val data = async { apiService.getArticleList(pageNo) }
-            data.await()
+            apiService.getArticleList(pageNo)
         }
     }
 

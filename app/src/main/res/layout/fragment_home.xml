@@ -4,12 +4,20 @@
 
     <data>
 
+        <variable
+            name="vm"
+            type="com.creator.concisiondemo.ui.main.home.HomeViewModel" />
     </data>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
 
         <com.scwang.smart.refresh.layout.SmartRefreshLayout
             android:id="@+id/refresh"
@@ -24,6 +32,10 @@
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:layout_height="match_parent" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="@{vm.data.errMessage}"
+                android:layout_height="wrap_content"/>
         </com.scwang.smart.refresh.layout.SmartRefreshLayout>
     </FrameLayout>
 

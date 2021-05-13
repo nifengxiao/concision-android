@@ -6,7 +6,7 @@ import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.RegexUtils
 import com.blankj.utilcode.util.ToastUtils
 import com.creator.concision.util.file.FileUtils
-import com.creator.config.app.sp.AppPreHelper
+import com.creator.config.app.cache.AppPreHelper
 import com.creator.config.data.model.bean.UrlBean
 import com.example.config.BuildConfig
 import me.jessyan.retrofiturlmanager.RetrofitUrlManager

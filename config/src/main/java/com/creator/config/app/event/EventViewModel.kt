@@ -2,6 +2,7 @@ package com.creator.config.app.event
 
 import androidx.lifecycle.MutableLiveData
 import com.creator.concision.core.viewmodel.BaseViewModel
+import com.creator.config.data.model.bean.SettingBean
 import com.kunminx.architecture.ui.callback.UnPeekLiveData
 
 /**
@@ -13,5 +14,7 @@ class EventViewModel : BaseViewModel() {
 
     //这里任意定义了一个值来进行测试
     val test = UnPeekLiveData<String>()
+
+//    var test = MutableLiveData<String>()
 
 }

@@ -1,4 +1,4 @@
-package com.creator.config.app.sp
+package com.creator.config.app.cache
 
 import com.blankj.utilcode.util.GsonUtils
 import com.blankj.utilcode.util.GsonUtils.fromJson
@@ -17,25 +17,25 @@ import com.tencent.mmkv.MMKV
 object AppPreHelper {
 
     private val appPreShares: MMKV
-        get() = MMkvUtil.getMMKv(SPUtilsName.APP_TABLE)
+        get() = MMkvUtil.getMMKv(CacheUtilsName.APP_TABLE)
 
     //url
     var urls: ArrayList<UrlBean>
         get() {
-            val urlsStr = appPreShares.getString(SPUtilsName.URLS, "")
+            val urlsStr = appPreShares.getString(CacheUtilsName.URLS, "")
             val urlBeans =
                 fromJson<ArrayList<UrlBean>>(urlsStr, GsonUtils.getListType(UrlBean::class.java))
             return urlBeans ?: return arrayListOf()
         }
         set(value) {
-            appPreShares.encode(SPUtilsName.URLS, GsonUtils.toJson(value))
+            appPreShares.encode(CacheUtilsName.URLS, GsonUtils.toJson(value))
         }
 
 
     //存入基本信息
     var setting: SettingBean
         get() {
-            val string = appPreShares.getString(SPUtilsName.SETTING, "")
+            val string = appPreShares.getString(CacheUtilsName.SETTING, "")
             if (StringUtils.isEmpty(string)) {
                 return SettingBean()
             }
@@ -46,7 +46,7 @@ object AppPreHelper {
         set(settingBean) {  //注意 这个方法最好仅限于更新网络数据的时候使用
             settingBean.isOpenGuide = setting.isOpenGuide
             appViewModel.setting.postValue(settingBean)
-            appPreShares.encode(SPUtilsName.SETTING, GsonUtils.toJson(settingBean))
+            appPreShares.encode(CacheUtilsName.SETTING, GsonUtils.toJson(settingBean))
         }
 
     //是否已经打开过引导页
@@ -57,7 +57,7 @@ object AppPreHelper {
             settingReplace.isOpenGuide = value
             LogUtils.i("SettingBean-->更改是否打开过引导页", settingReplace)
             appViewModel.setting.postValue(settingReplace)
-            appPreShares.encode(SPUtilsName.SETTING, GsonUtils.toJson(settingReplace))
+            appPreShares.encode(CacheUtilsName.SETTING, GsonUtils.toJson(settingReplace))
         }
 
     /**

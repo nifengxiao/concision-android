@@ -6,7 +6,7 @@ import com.creator.concisiondemo.R
 import com.creator.concisiondemo.databinding.FragmentAppviewmodelBinding
 import com.creator.config.app.appViewModel
 import com.creator.config.app.base.BaseFragment
-import com.creator.config.app.sp.AppPreHelper
+import com.creator.config.app.cache.AppPreHelper
 import com.creator.config.data.model.bean.SettingBean
 
 class AppViewModelFragment : BaseFragment<AppViewModelViewModel, FragmentAppviewmodelBinding>() {

@@ -12,3 +12,4 @@ import com.creator.config.app.base.BaseFragment
 fun BaseFragment<BaseViewModel, ViewDataBinding>.loading(){
     this.loadSir.showLoading()
 }
+

@@ -11,11 +11,14 @@ import com.creator.concisiondemo.databinding.FragmentMenuBinding
 import com.creator.concisiondemo.ui.adapter.MenuAdapter
 import com.creator.concisiondemo.utils.openStatusBar
 import com.creator.config.app.base.BaseFragment
+import com.kingja.loadsir.callback.Callback
 import com.luck.picture.lib.decoration.GridSpacingItemDecoration
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_menu.*
 import java.util.*
 import javax.inject.Inject
+import javax.inject.Scope
+import kotlin.collections.ArrayList
 
 /**
  * @CreateDate:     2021/3/8
@@ -42,10 +45,11 @@ class MenuFragment : BaseFragment<MenuViewModel, FragmentMenuBinding>() {
         rc_menu.adapter = menuAdapter
         menuAdapter.data = arrayListOf(
             MenuBean(getColor(), R.string.menu_main.getResString()),
-            MenuBean(getColor(), R.string.menu_room.getResString()),
+//            MenuBean(getColor(), R.string.menu_room.getResString()),
             MenuBean(getColor(), R.string.data_binding.getResString()),
             MenuBean(getColor(), R.string.test.getResString())
         )
+
         //点击事件
         menuAdapter.setOnItemClickListener { adapter, _, position ->
             val data = adapter.data[position] as MenuBean

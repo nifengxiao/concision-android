@@ -1,6 +1,7 @@
 package com.creator.concisiondemo.ui.main.home
 
 import android.os.Bundle
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.blankj.utilcode.util.ConvertUtils
@@ -87,7 +88,10 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
     override fun createObserver() {
         requestHomeViewModel.run {
             articleData.observe(viewLifecycleOwner, Observer {
-                loadListData(it, articleAdapter, loadSir, refresh)
+//                loadListData(it, articleAdapter, loadSir, refresh)
+
+                //TODO
+                mViewModel.data.set(it)
             })
         }
     }
@@ -96,4 +100,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
         this.openStatusBar(refresh)
         return false
     }
+
+
+
 }

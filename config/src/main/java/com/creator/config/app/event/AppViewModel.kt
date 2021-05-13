@@ -2,7 +2,7 @@ package com.creator.config.app.event
 
 import androidx.lifecycle.MutableLiveData
 import com.creator.concision.core.viewmodel.BaseViewModel
-import com.creator.config.app.sp.AppPreHelper
+import com.creator.config.app.cache.AppPreHelper
 import com.creator.config.data.model.bean.SettingBean
 import com.creator.config.data.model.bean.UserBean
 

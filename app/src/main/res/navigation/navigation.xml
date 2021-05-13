@@ -140,6 +140,14 @@
             android:id="@+id/deepLink"
             app:uri="https:www.concision.com/deeplink" />
     </fragment>
+    <fragment
+        android:id="@+id/hilt_HomeFragment"
+        android:name="com.creator.concisiondemo.ui.main.home.Hilt_HomeFragment"
+        android:label="Hilt_HomeFragment" >
+        <action
+            android:id="@+id/action_hilt_HomeFragment_to_guide_fragment"
+            app:destination="@id/guide_fragment" />
+    </fragment>
 
 
 </navigation>

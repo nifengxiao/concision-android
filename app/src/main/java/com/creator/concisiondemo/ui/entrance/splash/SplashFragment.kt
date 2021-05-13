@@ -9,7 +9,7 @@ import com.creator.concisiondemo.data.isInit
 import com.creator.concisiondemo.databinding.FragmentSplashBinding
 import com.creator.concisiondemo.utils.closeSplashTheme
 import com.creator.config.app.base.BaseFragment
-import com.creator.config.app.sp.AppPreHelper
+import com.creator.config.app.cache.AppPreHelper
 import com.creator.config.utils.UrlUtils
 
 /**

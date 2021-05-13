@@ -9,6 +9,5 @@ import com.creator.concision.util.def.databind.StringObservableField
  * @Description:
  */
 class EventViewModel : BaseViewModel() {
-
     var text = StringObservableField("点击改变值")
 }

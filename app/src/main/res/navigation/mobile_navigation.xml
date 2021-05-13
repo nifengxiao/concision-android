@@ -12,9 +12,9 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_appviewmodel"
         android:name="com.creator.concisiondemo.ui.main.appviewmodel.AppViewModelFragment"
-        android:label="@string/title_dashboard"
+        android:label="@string/title_app_view_model"
         tools:layout="@layout/fragment_appviewmodel" />
 
     <fragment

@@ -1,11 +1,11 @@
-package com.creator.config.app.sp
+package com.creator.config.app.cache
 
 /**
  * @CreateDate:     2021/2/20
  * @Author:         YuanFeng
- * @Description:    储存share相关key
+ * @Description:    储存cache相关key
  */
-object SPUtilsName {
+object CacheUtilsName {
     /********************app相关 ********************/
     const val APP_TABLE = "APP_TABLE" //app share
     const val SETTING = "SETTING"

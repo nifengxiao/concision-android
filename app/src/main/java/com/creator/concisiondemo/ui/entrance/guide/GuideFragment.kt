@@ -6,7 +6,7 @@ import com.creator.concision.ext.nav
 import com.creator.concision.ext.navigateAction
 import com.creator.concisiondemo.R
 import com.creator.config.app.base.BaseFragment
-import com.creator.config.app.sp.AppPreHelper
+import com.creator.config.app.cache.AppPreHelper
 import com.creator.concisiondemo.databinding.FragmentGuideBinding
 
 /**
