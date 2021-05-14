@@ -2,9 +2,11 @@ package com.creator.concisiondemo.ui.main.home
 
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.blankj.utilcode.util.ConvertUtils
+import com.creator.concision.core.viewmodel.BaseViewModel
 import com.creator.concision.ext.nav
 import com.creator.concision.ext.navigateAction
 import com.creator.concisiondemo.R
@@ -12,12 +14,12 @@ import com.creator.config.app.base.BaseFragment
 import com.creator.concisiondemo.data.model.bean.ArticleBean
 import com.creator.concisiondemo.databinding.FragmentHomeBinding
 import com.creator.concisiondemo.ui.adapter.ArticleAdapter
-import com.creator.config.utils.showLoading
 import com.creator.concisiondemo.viewmodel.request.RequestHomeViewModel
 import com.creator.concision.weight.recyclerview.SpaceItemDecoration
 import com.creator.concisiondemo.data.model.bean.WebBean
 import com.creator.concisiondemo.utils.openStatusBar
-import com.creator.config.utils.loadListData
+import com.creator.config.app.base.BaseActivity
+import com.creator.config.utils.*
 import com.kingja.loadsir.callback.Callback
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -81,26 +83,29 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
 
     override fun lazyLoadData() {
         super.lazyLoadData()
-        loadSir.showLoading()
+        loadSirLoading()
         refresh()
     }
 
     override fun createObserver() {
         requestHomeViewModel.run {
             articleData.observe(viewLifecycleOwner, Observer {
-//                loadListData(it, articleAdapter, loadSir, refresh)
-
-                //TODO
-                mViewModel.data.set(it)
+                loadListData(it, articleAdapter, loadSir, refresh)
             })
         }
+
     }
 
     override fun openDefaultImmersionBar(): Boolean {
         this.openStatusBar(refresh)
+        loadSirLoading()
         return false
     }
 
 
 
+}
+
+fun HomeFragment.loadSirLoading() {
+    this.loadSir.showLoading()
 }
