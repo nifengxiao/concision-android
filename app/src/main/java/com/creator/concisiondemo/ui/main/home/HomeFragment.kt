@@ -98,14 +98,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
 
     override fun openDefaultImmersionBar(): Boolean {
         this.openStatusBar(refresh)
-        loadSirLoading()
         return false
     }
 
-
-
-}
-
-fun HomeFragment.loadSirLoading() {
-    this.loadSir.showLoading()
 }
