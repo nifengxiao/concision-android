@@ -1,4 +1,6 @@
 # Concision
+### 声明
+此框架中的concision模块源自于鸡哥(hegaojian)的[JetpackMvvm](https://github.com/hegaojian/JetpackMvvm),在此基础上加以改造而得,仅供交流、学习以及开发使用。如仅需Mvvm模式框架,请转到[JetpackMvvm](https://github.com/hegaojian/JetpackMvvm)，谢谢！
 
 ### 快速创建mvvm相关功能
 [concision-template](https://github.com/nifengxiao/concision-template)
