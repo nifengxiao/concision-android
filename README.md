@@ -103,6 +103,6 @@
 - next ：app更新、权限控制、文件上传下载、图片预览、视频播放
 
 #### 感谢
-[Jetpack-MVVM-Best-Practice](https://github.com/KunMinX/Jetpack-MVVM-Best-Practice)
-[JetpackMvvm](https://github.com/hegaojian/JetpackMvvm)
+- [Jetpack-MVVM-Best-Practice](https://github.com/KunMinX/Jetpack-MVVM-Best-Practice)
+- [JetpackMvvm](https://github.com/hegaojian/JetpackMvvm)
 
