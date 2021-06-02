@@ -33,7 +33,7 @@ class EventFragment : BaseFragment<EventViewModel, FragmentEventBinding>() {
 
     inner class ProxyClick {
         fun change() {
-            eventViewModel.test.value = "我只想穿个数据"
+            eventViewModel.test.value = "我只想传个数据"
         }
     }
 }

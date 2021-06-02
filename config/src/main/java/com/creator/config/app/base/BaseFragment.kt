@@ -75,7 +75,7 @@ abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding> :
      */
     protected fun loadSirInit(target: Any, onReloadListener: Callback.OnReloadListener) {
         loadSir = LoadSir.getDefault().register(target) {
-            loadSir.showLoading()
+            loadSirLoading()
             onReloadListener.onReload(it)
         }
     }
